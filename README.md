@@ -6,7 +6,7 @@
 
 <h1 align="center">
    <a href="https://themeselection.com/item/materio-bootstrap-django-admin-template/" target="_blank" align="center">
-      Materio - Bootstrap 5 HTML + Django Admin Template
+      🧠 NeuroVue — AI-Powered Mock Interview Platform
    </a>
 </h1>
 
