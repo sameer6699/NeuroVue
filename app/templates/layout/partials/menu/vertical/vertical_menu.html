@@ -1,14 +1,14 @@
 <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
   <!-- ! Hide app brand if navbar-full -->
   {% if not navbar_full %}
-  <div class="app-brand demo">
-    <a href="{% url 'index' %}" class="app-brand-link">
-      <span class="app-brand-logo demo me-1">
+  <div class="app-brand demo d-flex align-items-center justify-content-start">
+    <a href="{% url 'index' %}" class="app-brand-link d-flex align-items-center">
+      <span class="app-brand-logo demo me-0.5">
         {% include 'partials/logo.html' %}
       </span>
-      <span class="app-brand-text demo menu-text fw-bold ms-2 fs-4 text-dark">
+      <span class="app-brand-text demo menu-text fw-bold ms-1 fs-4 text-dark">
         {% get_theme_variables 'template_name' %}
-    </span>
+      </span>
     </a>
 
     <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto">
