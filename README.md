@@ -6,11 +6,13 @@
 
 <h1 align="center">
    <a href="https://themeselection.com/item/materio-bootstrap-django-admin-template/" target="_blank" align="center">
-      Materio - Bootstrap 5 HTML + Django Admin Template
+      NeuroVue - AI That Prepares You for the Real Interview.
    </a>
 </h1>
 
-<p align="center">Most Powerful & Comprehensive Bootstrap Django Admin Dashboard Template built for developers!</p>
+<p align="center">
+ NeuroVue is an AI-powered interview prep platform with a sleek Bootstrap-Django admin dashboard. Practice smarter, track progress, and boost your chances of success.
+</p>
 
 <p align="center">   
    <a href="https://twitter.com/Theme_Selection" target="_blank">
