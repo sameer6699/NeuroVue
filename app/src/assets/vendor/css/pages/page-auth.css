@@ -68,3 +68,13 @@
 .light-style .authentication-wrapper .authentication-bg {
   background-color: #fff;
 }
+
+.social-btn {
+  transition: all 0.3s ease;
+}
+
+.social-btn:hover {
+  background-color: #f0f0f0; /* Light grey on hover */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow */
+  transform: translateY(-2px); /* Slight lift */
+}
