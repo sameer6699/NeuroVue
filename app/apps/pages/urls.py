@@ -29,5 +29,10 @@ urlpatterns = [
         "pages/misc/under_maintenance/",
         MiscPagesView.as_view(template_name="pages_misc_under_maintenance.html"),
         name="pages-misc-under-maintenance",
+    ),
+    path(
+        "pages/misc/landing_page_pro/",
+        MiscPagesView.as_view(template_name="landing_test.html"),
+        name="landing-page-pro",
     )
 ]
