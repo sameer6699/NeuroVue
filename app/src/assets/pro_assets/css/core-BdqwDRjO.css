@@ -43093,3 +43093,15 @@ a.bg-vimeo:focus {
   50% { border-color: transparent; }
   100% { border-color: #915EFF; }
 }
+
+  /* Hover effect for the toggle label */
+  .form-check.form-switch.d-inline-flex.align-items-center.fs-5:hover {
+    background-color: #f0f0f0; /* light gray background on hover */
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  .form-check.form-switch.d-inline-flex.align-items-center.fs-5:hover span {
+    color: #4a90e2; /* change text color to a blue shade on hover */
+    transition: color 0.3s ease;
+  }
