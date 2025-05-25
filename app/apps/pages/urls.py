@@ -35,4 +35,5 @@ urlpatterns = [
         MiscPagesView.as_view(template_name="landing_test.html"),
         name="landing-page-pro",
     )
+    
 ]
