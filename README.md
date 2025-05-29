@@ -1,109 +1,148 @@
-<p align="center">
-   <a href="https://themeselection.com/item/materio-bootstrap-django-admin-template/" target="_blank">
-      <img src="https://cdn.themeselection.com/ts-assets/materio/logo/logo.png" alt="materio-logo" width="40px" height="auto">
-   </a>
-</p>
-
-<h1 align="center">
-   <a href="https://themeselection.com/item/materio-bootstrap-django-admin-template/" target="_blank" align="center">
-      NeuroVue - AI That Prepares You for the Real Interview.
-   </a>
-</h1>
+# NeuroVue - AI That Prepares You for the Real Interview
 
 <p align="center">
- NeuroVue is an AI-powered interview prep platform with a sleek Bootstrap-Django admin dashboard. Practice smarter, track progress, and boost your chances of success.
+   <img src="https://cdn.themeselection.com/ts-assets/materio/logo/logo.png" alt="neurovue-logo" width="40px" height="auto">
 </p>
 
-<p align="center">   
-   <a href="https://twitter.com/Theme_Selection" target="_blank">
-      <img alt="Twitter Follow" src="https://img.shields.io/twitter/follow/Theme_Selection">
-   </a>
-</p>
 <p align="center">
-   <a href="https://themeselection.com/item/materio-bootstrap-django-admin-template/" target="_blank" align="center">
-      <img src="https://cdn.themeselection.com/ts-assets/materio/materio-bootstrap-django-admin-template/banner/banner.png" alt="Materio - Bootstrap 5 HTML Django Admin Template">
-   </a>
+ NeuroVue is your intelligent companion for acing interviews. Powered by cutting-edge AI, NeuroVue offers personalized mock interview sessions, real-time feedback, and insightful analytics — all within a sleek, user-friendly User Interface
 </p>
 
-## Introduction
+## Table of Contents
+- [Features](#features)
+- [Getting Started](#getting-started)
+- [Project Structure](#project-structure)
+- [Installation](#installation)
+- [Usage](#usage)
+- [API Documentation](#api-documentation)
+- [Contributing](#contributing)
+- [Support](#support)
+- [License](#license)
 
-**Materio – Bootstrap Django Admin Dashboard Template** – is the most developer friendly & highly customizable Admin Dashboard Template based on Bootstrap 5.
+## Features
 
-If you’re a developer looking for an admin dashboard that is developer-friendly, rich with features, and highly customizable look no further than Materio. We’ve followed the highest industry standards to bring you the very best admin template that is not only fast and easy to use but highly scalable. Offering ultimate convenience and flexibility, you’ll be able to build whatever application you want with very little hassle.
+- 🤖 AI-Powered Mock Interviews
+- 📊 Real-time Performance Analytics
+- 🎯 Personalized Feedback
+- 📱 Responsive Design
+- 🔒 Secure Authentication
+- 📈 Progress Tracking
+- 🎓 Industry-Specific Questions
+- 💬 Natural Language Processing
 
-Build premium quality applications with ease. Use our innovative admin template to create eye-catching, high-quality WebApps. Your apps will be completely responsive, ensuring they’ll look stunning and function flawlessly on desktops, tablets, and mobile devices.
+## Getting Started
+
+### Prerequisites
+- Python 3.8+
+- Node.js 14+
+- Django 4.0+
+- PostgreSQL 12+
+
+### Project Structure
+```
+neurovue/
+├── backend/
+│   ├── api/
+│   ├── core/
+│   ├── interviews/
+│   ├── users/
+│   └── utils/
+├── frontend/
+│   ├── src/
+│   │   ├── components/
+│   │   ├── pages/
+│   │   ├── services/
+│   │   └── utils/
+│   └── public/
+├── docs/
+└── tests/
+```
+
+## Installation
+
+1. Clone the repository
+```bash
+git clone https://github.com/yourusername/neurovue.git
+cd neurovue
+```
+
+2. Set up the backend
+```bash
+cd backend
+python -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
+pip install -r requirements.txt
+python manage.py migrate
+```
+
+3. Set up the frontend
+```bash
+cd frontend
+npm install
+```
+
+4. Start the development servers
+```bash
+# Backend
+python manage.py runserver
+
+# Frontend
+npm run dev
+```
+
+## Usage
+
+1. Register/Login to your account
+2. Select your interview type and industry
+3. Start your mock interview session
+4. Receive real-time feedback and analytics
+5. Review your performance and areas for improvement
+
+## API Documentation
+
+Detailed API documentation is available at `/api/docs` when running the server locally.
+
+## Contributing
+
+We welcome contributions to NeuroVue! Please follow these steps:
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+### Contribution Guidelines
+- Follow PEP 8 style guide for Python code
+- Use ESLint for JavaScript/TypeScript code
+- Write meaningful commit messages
+- Add tests for new features
+- Update documentation as needed
+
+## Support
+
+### Professional Support
+For professional support, please contact us at:
+- Email: support@neurovue.com
+- Business Hours: Monday - Friday, 9:00 AM - 5:00 PM EST
+
+### Community Support
+- GitHub Issues: For bug reports and feature requests
+- Discord Community: Join our community for discussions and help
+- Documentation: Check our comprehensive documentation
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Acknowledgments
+
+- Thanks to all our contributors
+- Special thanks to the open-source community
+- Built with Django and React
 
 ---
 
-[View Demo](https://demos.themeselection.com/materio-html-django-admin-template/demo-1/)
-
----
-
-## Installation ⚒️
-
-Please [visit](https://demos.themeselection.com/materio-bootstrap-html-admin-template/documentation/django-init-installation.html) our docs for installation guide.
-
-## Documentation 📜
-
-Check out our live [Documentation](https://demos.themeselection.com/materio-bootstrap-html-admin-template/documentation/django-introduction.html)
-
-## Support 👨‍💻
-
-We use GitHub issues as support tickets to manage Item support.
-
-1. In order to raise the GitHub issue, you must have our Premium Item repository access. [Get repo access](https://tools.themeselection.com/github/github-access).
-2. Make sure you use our [Raise Support](https://tools.themeselection.com/github/raise-support) form to create an issue.
-
-## Why forking is disabled? 🔒
-
-You will lose repository access when your support expires. If you have forked the repo and you lose the access to our repo then your fork also got deleted by GitHub.
-
-Hence, as precautions we disabled forking our repo.
-
-**Solution**
-
-However, you can still keep your repo even after your support expires by setting our repo as upstream:
-
-1. Create a new **private repo** in your GitHub. Make sure it's a private repo. You can't share our code publicly as per license.
-2. Clone our repo: `git clone https://github.com/themeselection/materio-bootstrap-html-django-admin-template.git`
-3. Navigate to cloned directory
-4. Remove our repo as origin by running command: `git remote remove origin`
-5. Add your newly created repo as origin by running command: `git remote add origin YOUR_NEWLY_CREATE_REPO_GIT_URL`
-6. Add our repo as upstream by running command: `git remote add upstream https://github.com/themeselection/materio-bootstrap-html-django-admin-template.git`
-7. Push the code to GitHub by running command: `git push -u origin main`
-
-Now, whenever you want to pull the latest changes from our repo just pull the changes by running command: `git pull upstream main`
-
-Cheers 🥂
-
-## Contributing 🦸
-
-Contribution are always welcome and recommended! Here is how:
-
-- Clone our repo `git clone https://github.com/themeselection/materio-bootstrap-html-django-admin-template.git`
-- create a new branch based on branch you want to make Pull request to. For example if you want to make pull request to main branch, create new branch based on main branch.
-- Push your changes to new branch
-- Create pull request
-
-### Contribution Requirements 🧰
-
-- When you contribute, you agree to give a non-exclusive license to ThemeSelection to use that contribution in any context as we (ThemeSelection) see appropriate.
-- If you use content provided by another party, it must be appropriately licensed using an open source license.
-- Contributions are only accepted through Github pull requests.
-- Finally, contributed code must work in all supported browsers.
-
-## Useful Links 🎁
-
-- [Vue CheatSheet](https://vue-cheatsheet.themeselection.com/)
-- [Freebies](https://themeselection.com/products/category/download-free-admin-templates/)
-- [Download Free Admin Templates](https://themeselection.com/products/category/download-free-admin-templates/)
-- [Bootstrap 5 CheatSheet](https://bootstrap-cheatsheet.themeselection.com/)
-
-## Social Media :earth_africa:
-
-- [Twitter](https://twitter.com/Theme_Selection)
-- [Facebook](https://www.facebook.com/ThemeSelections/)
-- [Pinterest](https://pinterest.com/themeselect/)
-- [Instagram](https://www.instagram.com/themeselection/)
-- [Discord](https://discord.gg/kBHkY7DekX)
-- [YouTube](https://www.youtube.com/channel/UCuryo5s0CW4aP83itLjIdZg)
+<p align="center">
+   Made with ❤️ by the NeuroVue Team
+</p>
