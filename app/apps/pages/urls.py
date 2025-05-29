@@ -34,6 +34,11 @@ urlpatterns = [
         "pages/misc/landing_page_pro/",
         MiscPagesView.as_view(template_name="landing_test.html"),
         name="landing-page-pro",
+    ),
+    path(
+        "pages/misc/login/",
+        MiscPagesView.as_view(template_name="login.html"),
+        name="landing-page-pro",
     )
     
 ]

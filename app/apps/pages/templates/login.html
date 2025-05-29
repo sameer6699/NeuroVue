@@ -1,0 +1,2816 @@
+<!DOCTYPE html>
+<!-- saved from url=(0102)https://demos.themeselection.com/materio-bootstrap-html-laravel-admin-template/demo-1/auth/login-cover -->
+<html
+  lang="en"
+  class="light-style customizer-hide layout-menu-fixed"
+  dir="ltr"
+  data-theme="theme-default"
+  data-assets-path="https://demos.themeselection.com/materio-bootstrap-html-laravel-admin-template/demo/assets/"
+  data-base-url="https://demos.themeselection.com/materio-bootstrap-html-laravel-admin-template/demo-1"
+  data-framework="laravel"
+  data-template="blank-menu-theme-default-light"
+  data-style="light"
+>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"
+    />
+
+    <title>Login Cover - Pages | Materio - Bootstrap 5 HTML + Laravel Admin Template</title>
+    <meta
+      name="description"
+      content="Most Powerful &amp; Comprehensive Bootstrap 5 + Laravel HTML Admin Dashboard Template built for developers!"
+    />
+    <meta
+      name="keywords"
+      content="dashboard, material, material design, bootstrap 5 dashboard, bootstrap 5 design, bootstrap 5"
+    />
+    <!-- laravel CRUD token -->
+    <meta name="csrf-token" content="{{ csrf_token  }}" />
+    <!-- Canonical SEO -->
+    <link rel="canonical" href="https://themeselection.com/item/materio-bootstrap-laravel-admin-template/" />
+    <!-- Favicon -->
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="https://demos.themeselection.com/materio-bootstrap-html-laravel-admin-template/demo/assets/img/favicon/favicon.ico"
+    />
+
+    <!-- Include Styles -->
+    <!-- $isFront is used to append the front layout styles only on the front layout otherwise the variable will be blank -->
+    <!-- BEGIN: Theme CSS-->
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com/" />
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="" />
+    <link href="{% static '/pro_assets/css/css2' %}" rel="stylesheet" />
+
+    <link rel="preload" as="style" href="{% static '/pro_assets/css/remixicon-CB5Upr-_.css' %}" />
+    <link rel="preload" as="style" href="{% static '/pro_assets/css/login_register/flag-icons-Bor6250r.css' %}" />
+    <link rel="preload" as="style" href="{% static '/pro_assets/css/node-waves-D5r9FyLK.css' %}" />
+    <!-- Core CSS -->
+    <link rel="preload" as="style" href="{% static '/pro_assets/css/core-BdqwDRjO.css' %}" />
+    <link rel="preload" as="style" href="{% static '/pro_assets/css/theme-default-fL703prY.css' %}" />
+    <link rel="preload" as="style" href="{% static '/pro_assets/css/demo-Z-YEgnIY.css' %}" />
+    <!-- Vendor Styles -->
+    <link
+      rel="preload"
+      as="style"
+      href="{% static '/pro_assets/css/login_register/perfect-scrollbar-CTjXBMlg.css' %}"
+    />
+    <link
+      rel="preload"
+      as="style"
+      href="{% static '/pro_assets/css/login_register/typeahead-rBaq-1fs.css' %}"
+    />
+    <link
+      rel="stylesheet"
+      href="{% static '/pro_assets/css/login_register/perfect-scrollbar-CTjXBMlg.css' %}"
+      class=""
+    />
+    <link
+      rel="preload"
+      as="style"
+      href="{% static '/pro_assets/css/login_register/form-validation-Z40eMZE8.css' %}"
+    />
+
+    <!-- Page Styles -->
+    <link
+      rel="preload"
+      as="style"
+      href="{% static '/pro_assets/css/login_register/page-auth-DHusFg9z.css' %}"
+    />
+    <!-- Include Scripts for customizer, helper, analytics, config -->
+    <!-- $isFront is used to append the front layout scriptsIncludes only on the front layout otherwise the variable will be blank -->
+    <!-- laravel style -->
+    <link rel="modulepreload" href="{% static '/pro_assets/js/helpers-B9_VIWCr.js' %}" />
+    <script async="" src="{% static '/pro_assets/js/gtm.js' %}"></script>
+    <script type="module" src="{% static '/pro_assets/js/helpers-B9_VIWCr.js' %}"></script>
+    <!-- beautify ignore:start -->
+    <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
+    <!--? Template customizer: To hide customizer set displayCustomizer value false in config.js.  -->
+    <link rel="preload" as="style" href="{% static '/pro_assets/css/template-customizer-BTiIn6t0.css' %}" />
+    <link rel="modulepreload" href="{% static '/pro_assets/js/template-customizer-pfWEYAMA.js' %}" />
+    <link
+      rel="stylesheet"
+      href="{% static '/pro_assets/css/template-customizer-BTiIn6t0.css' %}"
+    />
+    <script type="module" src="{% static '/pro_assets/js/template-customizer-pfWEYAMA.js' %}"></script>
+    <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
+    <link
+      rel="modulepreload"
+      href="{% static '/pro_assets/js/login_register/config-BSYyexv8.js' %}"
+    />
+    <script
+      type="module"
+      src="{% static '/pro_assets/js/login_register/config-BSYyexv8.js' %}"
+    ></script>
+    <script type="module">
+      window.templateCustomizer = new TemplateCustomizer({
+        cssPath: '',
+        themesPath: '',
+        defaultStyle: 'light',
+        defaultShowDropdownOnHover: '1', // true/false (for horizontal layout only)
+        displayCustomizer: '1',
+        lang: 'en',
+        pathResolver: function (path) {
+          var resolvedPaths = {
+            // Core stylesheets
+            'core.scss':
+              'https://demos.themeselection.com/materio-bootstrap-html-laravel-admin-template/demo/build/assets/core-BdqwDRjO.css',
+            'core-dark.scss':
+              'https://demos.themeselection.com/materio-bootstrap-html-laravel-admin-template/demo/build/assets/core-dark-DlFO-GcK.css',
+
+            // Themes
+            'theme-default.scss':
+              'https://demos.themeselection.com/materio-bootstrap-html-laravel-admin-template/demo/build/assets/theme-default-fL703prY.css',
+            'theme-default-dark.scss':
+              'https://demos.themeselection.com/materio-bootstrap-html-laravel-admin-template/demo/build/assets/theme-default-dark-6ufYpaZF.css',
+            'theme-bordered.scss':
+              'https://demos.themeselection.com/materio-bootstrap-html-laravel-admin-template/demo/build/assets/theme-bordered-mukBFQsu.css',
+            'theme-bordered-dark.scss':
+              'https://demos.themeselection.com/materio-bootstrap-html-laravel-admin-template/demo/build/assets/theme-bordered-dark-BxW4RxPF.css',
+            'theme-semi-dark.scss':
+              'https://demos.themeselection.com/materio-bootstrap-html-laravel-admin-template/demo/build/assets/theme-semi-dark-V_cttLte.css',
+            'theme-semi-dark-dark.scss':
+              'https://demos.themeselection.com/materio-bootstrap-html-laravel-admin-template/demo/build/assets/theme-semi-dark-dark-C6jQhYtB.css'
+          };
+          return resolvedPaths[path] || path;
+        },
+        controls: ['rtl', 'style', 'headerType', 'contentLayout', 'layoutCollapsed', 'layoutNavbarOptions', 'themes']
+      });
+    </script>
+    <script>
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != 'dataLayer' ? '&l=' + l : '';
+        j.async = true;
+        j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, 'script', 'dataLayer', 'GTM-5DDHKGP');
+    </script>
+    <style type="text/css">
+      .layout-menu-fixed .layout-navbar-full .layout-menu,
+      .layout-menu-fixed-offcanvas .layout-navbar-full .layout-menu {
+        top: 0px !important;
+      }
+      .layout-page {
+        padding-top: 0px !important;
+      }
+      .content-wrapper {
+        padding-bottom: 0px !important;
+      }
+    </style>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static '/pro_assets/css/core-BdqwDRjO.css' %}"
+      class="template-customizer-core-css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static '/pro_assets/css/theme-default-fL703prY.css' %}"
+      class="template-customizer-theme-css"
+    />
+    <script
+      type="text/javascript"
+      src="{% static '/pro_assets/js/api.min.js' %}"
+      async=""
+      data-user="252882"
+      data-account="269977"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="{% static '/pro_assets/css/api.min.css' %}"
+      id="omapi-css"
+      media="all"
+    />
+    <link
+      rel="stylesheet"
+      href="{% static '/pro_assets/css/css2(1)' %}"
+    />
+  </head>
+
+  <body>
+    <noscript
+      ><iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-5DDHKGP"
+        height="0"
+        width="0"
+        style="display: none; visibility: hidden"
+      ></iframe
+    ></noscript>
+
+    <!-- Layout Content -->
+
+    <!-- Content -->
+    <div class="authentication-wrapper authentication-cover">
+      <!-- Logo -->
+      <a
+        href="https://demos.themeselection.com/materio-bootstrap-html-laravel-admin-template/demo-1"
+        class="auth-cover-brand d-flex align-items-center gap-3"
+      >
+        <span class="app-brand-logo demo"
+          ><span style="color: #9055fd">
+            <svg width="30" height="20" viewBox="0 0 250 196" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M12.3002 1.25469L56.655 28.6432C59.0349 30.1128 60.4839 32.711 60.4839 35.5089V160.63C60.4839 163.468 58.9941 166.097 56.5603 167.553L12.2055 194.107C8.3836 196.395 3.43136 195.15 1.14435 191.327C0.395485 190.075 0 188.643 0 187.184V8.12039C0 3.66447 3.61061 0.0522461 8.06452 0.0522461C9.56056 0.0522461 11.0271 0.468577 12.3002 1.25469Z"
+                fill="currentColor"
+              ></path>
+              <path
+                opacity="0.077704"
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M0 65.2656L60.4839 99.9629V133.979L0 65.2656Z"
+                fill="black"
+              ></path>
+              <path
+                opacity="0.077704"
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M0 65.2656L60.4839 99.0795V119.859L0 65.2656Z"
+                fill="black"
+              ></path>
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M237.71 1.22393L193.355 28.5207C190.97 29.9889 189.516 32.5905 189.516 35.3927V160.631C189.516 163.469 191.006 166.098 193.44 167.555L237.794 194.108C241.616 196.396 246.569 195.151 248.856 191.328C249.605 190.076 250 188.644 250 187.185V8.09597C250 3.64006 246.389 0.027832 241.935 0.027832C240.444 0.027832 238.981 0.441882 237.71 1.22393Z"
+                fill="currentColor"
+              ></path>
+              <path
+                opacity="0.077704"
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M250 65.2656L189.516 99.8897V135.006L250 65.2656Z"
+                fill="black"
+              ></path>
+              <path
+                opacity="0.077704"
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M250 65.2656L189.516 99.0497V120.886L250 65.2656Z"
+                fill="black"
+              ></path>
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M12.2787 1.18923L125 70.3075V136.87L0 65.2465V8.06814C0 3.61223 3.61061 0 8.06452 0C9.552 0 11.0105 0.411583 12.2787 1.18923Z"
+                fill="currentColor"
+              ></path>
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M12.2787 1.18923L125 70.3075V136.87L0 65.2465V8.06814C0 3.61223 3.61061 0 8.06452 0C9.552 0 11.0105 0.411583 12.2787 1.18923Z"
+                fill="white"
+                fill-opacity="0.15"
+              ></path>
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M237.721 1.18923L125 70.3075V136.87L250 65.2465V8.06814C250 3.61223 246.389 0 241.935 0C240.448 0 238.99 0.411583 237.721 1.18923Z"
+                fill="currentColor"
+              ></path>
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M237.721 1.18923L125 70.3075V136.87L250 65.2465V8.06814C250 3.61223 246.389 0 241.935 0C240.448 0 238.99 0.411583 237.721 1.18923Z"
+                fill="white"
+                fill-opacity="0.3"
+              ></path>
+            </svg>
+          </span>
+        </span>
+        <span class="app-brand-text demo text-heading fw-semibold">Materio</span>
+      </a>
+      <!-- /Logo -->
+      <div class="authentication-inner row m-0">
+        <!-- /Left Section -->
+        <div class="d-none d-lg-flex col-lg-7 col-xl-8 align-items-center justify-content-center p-12 pb-2">
+          <div>
+            <img
+              src="{% static '/pro_assets/img/login_register/auth-cover-login-illustration-light.png' %}"
+              class="authentication-image-model d-none d-lg-block"
+              alt="auth-model"
+              data-app-light-img="illustrations/auth-cover-login-illustration-light.png"
+              data-app-dark-img="illustrations/auth-cover-login-illustration-dark.png"
+            />
+          </div>
+          <img
+            src="{% static '/pro_assets/img/login_register/tree.png' %}"
+            alt="tree"
+            class="authentication-image-tree z-n1"
+          />
+          <img
+            src="{% static '/pro_assets/img/login_register/auth-cover-mask-light.png' %}"
+            class="scaleX-n1-rtl authentication-image d-none d-lg-block w-75"
+            alt="triangle-bg"
+            height="362"
+            data-app-light-img="{% static '/pro_assets/img/login_register/auth-cover-mask-light.png' %}"
+            data-app-dark-img="{% static '/pro_assets/img/login_register/auth-cover-mask-light.png' %}"
+          />
+        </div>
+        <!-- /Left Section -->
+
+        <!-- Login -->
+        <div
+          class="d-flex col-12 col-lg-5 col-xl-4 align-items-center authentication-bg position-relative py-sm-5 px-12 py-4"
+        >
+          <div class="w-px-400 mx-auto pt-5 pt-lg-0">
+            <h4 class="mb-1">Welcome to Materio! 👋🏻</h4>
+            <p class="mb-5">Please sign-in to your account and start the adventure</p>
+
+            <form
+              id="formAuthentication"
+              class="mb-5 fv-plugins-bootstrap5 fv-plugins-framework"
+              action="https://demos.themeselection.com/materio-bootstrap-html-laravel-admin-template/demo-1"
+              method="GET"
+              novalidate="novalidate"
+            >
+              <div class="form-floating form-floating-outline mb-5 fv-plugins-icon-container">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="email"
+                  name="email-username"
+                  placeholder="Enter your email or username"
+                  autofocus=""
+                />
+                <label for="email">Email or Username</label>
+                <div class="fv-plugins-message-container fv-plugins-message-container--enabled invalid-feedback"></div>
+              </div>
+              <div class="mb-5 fv-plugins-icon-container">
+                <div class="form-password-toggle">
+                  <div class="input-group input-group-merge">
+                    <div class="form-floating form-floating-outline">
+                      <input
+                        type="password"
+                        id="password"
+                        class="form-control"
+                        name="password"
+                        placeholder="············"
+                        aria-describedby="password"
+                      />
+                      <label for="password">Password</label>
+                    </div>
+                    <span class="input-group-text cursor-pointer"><i class="ri-eye-off-line ri-20px"></i></span>
+                  </div>
+                </div>
+                <div class="fv-plugins-message-container fv-plugins-message-container--enabled invalid-feedback"></div>
+              </div>
+              <div class="mb-5 d-flex justify-content-between flex-wrap py-2">
+                <div class="form-check mb-0">
+                  <input class="form-check-input" type="checkbox" id="remember-me" />
+                  <label class="form-check-label me-2" for="remember-me"> Remember Me </label>
+                </div>
+                <a
+                  href="https://demos.themeselection.com/materio-bootstrap-html-laravel-admin-template/demo-1/auth/forgot-password-cover"
+                  class="float-end mb-1"
+                >
+                  <span>Forgot Password?</span>
+                </a>
+              </div>
+              <button class="btn btn-primary d-grid w-100 waves-effect waves-light">Login</button>
+              <input type="hidden" />
+            </form>
+
+            <p class="text-center">
+              <span>New on our platform?</span>
+              <a
+                href="https://demos.themeselection.com/materio-bootstrap-html-laravel-admin-template/demo-1/auth/register-cover"
+              >
+                <span>Create an account</span>
+              </a>
+            </p>
+
+            <div class="divider my-5">
+              <div class="divider-text">or</div>
+            </div>
+
+            <div class="d-flex justify-content-center gap-2">
+              <a
+                href="javascript:;"
+                class="btn btn-icon btn-lg rounded-pill btn-text-facebook waves-effect waves-light"
+              >
+                <i class="tf-icons ri-facebook-fill ri-24px"></i>
+              </a>
+
+              <a href="javascript:;" class="btn btn-icon btn-lg rounded-pill btn-text-twitter waves-effect waves-light">
+                <i class="tf-icons ri-twitter-fill ri-24px"></i>
+              </a>
+
+              <a href="javascript:;" class="btn btn-icon btn-lg rounded-pill btn-text-github waves-effect waves-light">
+                <i class="tf-icons ri-github-fill ri-24px"></i>
+              </a>
+
+              <a
+                href="javascript:;"
+                class="btn btn-icon btn-lg rounded-pill btn-text-google-plus waves-effect waves-light"
+              >
+                <i class="tf-icons ri-google-fill ri-24px"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        <!-- /Login -->
+      </div>
+    </div>
+    <!--/ Content -->
+
+    <!--/ Layout Content -->
+
+    <div class="buy-now">
+      <a
+        href="https://themeselection.com/item/materio-bootstrap-laravel-admin-template/"
+        target="_blank"
+        class="btn btn-danger btn-buy-now waves-effect waves-light"
+        >Buy Now</a
+      >
+    </div>
+
+    <!-- Include Scripts -->
+    <!-- $isFront is used to append the front layout scripts only on the front layout otherwise the variable will be blank -->
+    <!-- BEGIN: Vendor JS-->
+
+    <link
+      rel="modulepreload"
+      href="{% static '/pro_assets/js/login_register/jquery-CbdDuLi-.js' %}"
+    /><link
+      rel="modulepreload"
+      href="https://demos.themeselection.com/materio-bootstrap-html-laravel-admin-template/demo/build/assets/jquery-CED9k22g.js"
+    /><link
+      rel="modulepreload"
+      href="https://demos.themeselection.com/materio-bootstrap-html-laravel-admin-template/demo/build/assets/_commonjsHelpers-BosuxZz1.js"
+    /><link
+      rel="modulepreload"
+      href="https://demos.themeselection.com/materio-bootstrap-html-laravel-admin-template/demo/build/assets/jquery-Czc5UB_B.js"
+    /><link
+      rel="modulepreload"
+      href="{% static '/pro_assets/js/popper-DNZnuk_L.js' %}"
+    /><link
+      rel="modulepreload"
+      href="{% static '/pro_assets/js/bootstrap-B-W6M1Y3.js' %}"
+    /><link
+      rel="modulepreload"
+      href="{% static '/pro_assets/js/node-waves-XDuO7R8f.js' %}"
+    /><link
+      rel="modulepreload"
+      href="{% static '/pro_assets/js/login_register/perfect-scrollbar-CLUWhEAQ.js' %}"
+    /><link
+      rel="modulepreload"
+      href="{% static '/pro_assets/js/login_register/hammer-36U3igM9.js' %}"
+    /><link
+      rel="modulepreload"
+      href="{% static '/pro_assets/js/login_register/typeahead-BKwBoP4T.js' %}"
+    /><link
+      rel="modulepreload"
+      href="{% static '/pro_assets/js/login_register/menu-CY9lYqyY.js' %}"
+    />
+    <script
+      type="module"
+      src="{% static '/pro_assets/js/login_register/jquery-CbdDuLi-.js' %}"
+    ></script>
+    <script
+      type="module"
+      src="{% static '/pro_assets/js/popper-DNZnuk_L.js' %}"
+    ></script>
+    <script
+      type="module"
+      src="{% static '/pro_assets/js/bootstrap-B-W6M1Y3.js' %}"
+    ></script>
+    <script
+      type="module"
+      src="{% static '/pro_assets/js/node-waves-XDuO7R8f.js' %}"
+    ></script>
+    <script
+      type="module"
+      src="{% static '/pro_assets/js/login_register/perfect-scrollbar-CLUWhEAQ.js' %}"
+    ></script>
+    <script
+      type="module"
+      src="{% static '/pro_assets/js/login_register/hammer-36U3igM9.js' %}"
+    ></script>
+    <script
+      type="module"
+      src="{% static '/pro_assets/js/login_register/typeahead-BKwBoP4T.js' %}"
+    ></script>
+    <script
+      type="module"
+      src="{% static '/pro_assets/js/login_register/menu-CY9lYqyY.js' %}"
+    ></script>
+    <link
+      rel="modulepreload"
+      href="{% static '/pro_assets/js/login_register/popular-BiiL9sLA.js' %}"
+    /><link
+      rel="modulepreload"
+      href="https://demos.themeselection.com/materio-bootstrap-html-laravel-admin-template/demo/build/assets/_commonjsHelpers-BosuxZz1.js"
+    /><link
+      rel="modulepreload"
+      href="{% static '/pro_assets/js/login_register/bootstrap5-COKFI6zn.js' %}"
+    /><link
+      rel="modulepreload"
+      href="https://demos.themeselection.com/materio-bootstrap-html-laravel-admin-template/demo/build/assets/index-CrI7K4FP.js"
+    /><link
+      rel="modulepreload"
+      href="{% static '/pro_assets/js/login_register/auto-focus-DSygTglc.js' %}"
+    />
+    <script
+      type="module"
+      src="{% static '/pro_assets/js/login_register/popular-BiiL9sLA.js' %}"
+    ></script>
+    <script
+      type="module"
+      src="{% static '/pro_assets/js/login_register/bootstrap5-COKFI6zn.js' %}"
+    ></script>
+    <script
+      type="module"
+      src="{% static '/pro_assets/js/login_register/auto-focus-DSygTglc.js' %}"
+    ></script>
+    <!-- END: Page Vendor JS-->
+    <!-- BEGIN: Theme JS-->
+    <link
+      rel="modulepreload"
+      href="{% static '/pro_assets/js/login_register/main-DRGn0ueN.js' %}"
+    />
+    <script
+      type="module"
+      src="{% static '/pro_assets/js/login_register/main-DRGn0ueN.js' %}"
+    ></script>
+    <!-- END: Theme JS-->
+    <!-- Pricing Modal JS-->
+    <!-- END: Pricing Modal JS-->
+    <!-- BEGIN: Page JS-->
+    <link
+      rel="modulepreload"
+      href="{% static '/pro_assets/js/login_register/pages-auth-MEmkL_Hu.j' %}s"
+    />
+    <script
+      type="module"
+      src="{% static '/pro_assets/js/login_register/pages-auth-MEmkL_Hu.js' %}"
+    ></script>
+    <!-- END: Page JS-->
+
+    <div id="template-customizer" class="bg-card" style="visibility: visible">
+      <a href="javascript:void(0)" class="template-customizer-open-btn" tabindex="-1"></a>
+
+      <div class="p-6 m-0 lh-1 border-bottom template-customizer-header position-relative py-4">
+        <h6 class="template-customizer-t-panel_header mb-0">Template Customizer</h6>
+        <p class="template-customizer-t-panel_sub_header mb-0 small">Customize and preview in real time</p>
+        <div class="d-flex align-items-center gap-2 position-absolute end-0 top-0 mt-6 me-5">
+          <a
+            href="javascript:void(0)"
+            class="template-customizer-reset-btn text-body"
+            data-bs-toggle="tooltip"
+            data-bs-placement="bottom"
+            aria-label="Reset Customizer"
+            data-bs-original-title="Reset Customizer"
+            ><i class="ri-refresh-line ri-20px"></i
+            ><span class="badge rounded-pill bg-danger badge-dot badge-notifications d-none"></span
+          ></a>
+          <a href="javascript:void(0)" class="template-customizer-close-btn fw-light text-body" tabindex="-1">
+            <i class="ri-close-line ri-24px"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="template-customizer-inner pt-6">
+        <!-- Theming -->
+        <div class="template-customizer-theming">
+          <h5 class="m-0 px-5 py-6">
+            <span class="template-customizer-t-theming_header bg-label-primary rounded-2 py-1 px-3 small">Theming</span>
+          </h5>
+
+          <!-- Style -->
+          <div class="m-0 px-5 pb-6 template-customizer-style w-100">
+            <label for="customizerStyle" class="form-label d-block template-customizer-t-style_label"
+              >Style (Mode)</label
+            >
+            <div class="row px-1 template-customizer-styles-options">
+              <div class="col-4 px-2">
+                <div class="form-check custom-option custom-option-icon checked">
+                  <label class="form-check-label custom-option-content p-0" for="customRadioIconlight">
+                    <span class="custom-option-body mb-0">
+                      <img
+                        src="{% static '/pro_assets/img/login_register/light.svg' %}"
+                        alt="Light"
+                        class="img-fluid scaleX-n1-rtl"
+                      />
+                    </span>
+                    <input
+                      name="customRadioIcon"
+                      class="form-check-input d-none"
+                      type="radio"
+                      value="light"
+                      id="customRadioIconlight"
+                      checked="checked"
+                    />
+                  </label>
+                </div>
+                <label class="form-check-label small text-nowrap" for="customRadioIconlight">Light</label>
+              </div>
+              <div class="col-4 px-2">
+                <div class="form-check custom-option custom-option-icon">
+                  <label class="form-check-label custom-option-content p-0" for="customRadioIcondark">
+                    <span class="custom-option-body mb-0">
+                      <img
+                        src="./Login Cover - Pages _ Materio - Bootstrap 5 HTML + Laravel Admin Template_files/dark.svg"
+                        alt="Dark"
+                        class="img-fluid scaleX-n1-rtl"
+                      />
+                    </span>
+                    <input
+                      name="customRadioIcon"
+                      class="form-check-input d-none"
+                      type="radio"
+                      value="dark"
+                      id="customRadioIcondark"
+                    />
+                  </label>
+                </div>
+                <label class="form-check-label small text-nowrap" for="customRadioIcondark">Dark</label>
+              </div>
+              <div class="col-4 px-2">
+                <div class="form-check custom-option custom-option-icon">
+                  <label class="form-check-label custom-option-content p-0" for="customRadioIconsystem">
+                    <span class="custom-option-body mb-0">
+                      <img
+                        src="./Login Cover - Pages _ Materio - Bootstrap 5 HTML + Laravel Admin Template_files/system.svg"
+                        alt="System"
+                        class="img-fluid scaleX-n1-rtl"
+                      />
+                    </span>
+                    <input
+                      name="customRadioIcon"
+                      class="form-check-input d-none"
+                      type="radio"
+                      value="system"
+                      id="customRadioIconsystem"
+                    />
+                  </label>
+                </div>
+                <label class="form-check-label small text-nowrap" for="customRadioIconsystem">System</label>
+              </div>
+            </div>
+          </div>
+
+          <!-- Themes -->
+          <div class="m-0 px-5 template-customizer-themes w-100">
+            <label for="customizerTheme" class="form-label template-customizer-t-theme_label">Themes</label>
+            <div class="row px-1 template-customizer-themes-options">
+              <div class="col-4 px-2">
+                <div class="form-check custom-option custom-option-icon checked">
+                  <label class="form-check-label custom-option-content p-0" for="themeRadiostheme-default">
+                    <span class="custom-option-body mb-0">
+                      <img
+                        src="./Login Cover - Pages _ Materio - Bootstrap 5 HTML + Laravel Admin Template_files/default.svg"
+                        alt="Default"
+                        class="img-fluid scaleX-n1-rtl"
+                      />
+                    </span>
+                    <input
+                      name="themeRadios"
+                      class="form-check-input d-none"
+                      type="radio"
+                      value="theme-default"
+                      id="themeRadiostheme-default"
+                      checked="checked"
+                    />
+                  </label>
+                </div>
+                <label class="form-check-label small text-nowrap" for="themeRadiostheme-default">Default</label>
+              </div>
+              <div class="col-4 px-2">
+                <div class="form-check custom-option custom-option-icon">
+                  <label class="form-check-label custom-option-content p-0" for="themeRadiostheme-bordered">
+                    <span class="custom-option-body mb-0">
+                      <img
+                        src="./Login Cover - Pages _ Materio - Bootstrap 5 HTML + Laravel Admin Template_files/border.svg"
+                        alt="Bordered"
+                        class="img-fluid scaleX-n1-rtl"
+                      />
+                    </span>
+                    <input
+                      name="themeRadios"
+                      class="form-check-input d-none"
+                      type="radio"
+                      value="theme-bordered"
+                      id="themeRadiostheme-bordered"
+                    />
+                  </label>
+                </div>
+                <label class="form-check-label small text-nowrap" for="themeRadiostheme-bordered">Bordered</label>
+              </div>
+              <div class="col-4 px-2">
+                <div class="form-check custom-option custom-option-icon">
+                  <label class="form-check-label custom-option-content p-0" for="themeRadiostheme-semi-dark">
+                    <span class="custom-option-body mb-0">
+                      <img
+                        src="./Login Cover - Pages _ Materio - Bootstrap 5 HTML + Laravel Admin Template_files/semi-dark.svg"
+                        alt="Semi Dark"
+                        class="img-fluid scaleX-n1-rtl"
+                      />
+                    </span>
+                    <input
+                      name="themeRadios"
+                      class="form-check-input d-none"
+                      type="radio"
+                      value="theme-semi-dark"
+                      id="themeRadiostheme-semi-dark"
+                    />
+                  </label>
+                </div>
+                <label class="form-check-label small text-nowrap" for="themeRadiostheme-semi-dark">Semi Dark</label>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--/ Theming -->
+
+        <!-- Layout -->
+        <div class="template-customizer-layout">
+          <hr class="m-0 px-5 my-6" />
+          <h5 class="m-0 px-5 pb-6">
+            <span class="template-customizer-t-layout_header bg-label-primary rounded-2 py-1 px-3 small">Layout</span>
+          </h5>
+
+          <!-- Layout(Menu) -->
+          <div class="m-0 px-5 pb-6 d-block template-customizer-layouts">
+            <label for="customizerStyle" class="form-label d-block template-customizer-t-layout_label"
+              >Menu (Navigation)</label
+            >
+            <div class="row px-1 template-customizer-layouts-options">
+              <!--? Uncomment If using offcanvas layout -->
+              <!-- <div class="col-12">
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="layoutRadios" id="layoutRadios-offcanvas"
+                value="static-offcanvas">
+              <label class="form-check-label template-customizer-t-layout_offcanvas"
+                for="layoutRadios-offcanvas"></label>
+            </div>
+          </div> -->
+              <!-- <div class="col-12">
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="layoutRadios" id="layoutRadios-fixed_offcanvas"
+                value="fixed-offcanvas">
+              <label class="form-check-label template-customizer-t-layout_fixed_offcanvas"
+                for="layoutRadios-fixed_offcanvas"></label>
+            </div>
+          </div> -->
+              <div class="col-4 px-2">
+                <div class="form-check custom-option custom-option-icon checked">
+                  <label class="form-check-label custom-option-content p-0" for="layoutsRadiosexpanded">
+                    <span class="custom-option-body mb-0">
+                      <img
+                        src="./Login Cover - Pages _ Materio - Bootstrap 5 HTML + Laravel Admin Template_files/expanded.svg"
+                        alt="Expanded"
+                        class="img-fluid scaleX-n1-rtl"
+                      />
+                    </span>
+                    <input
+                      name="layoutsRadios"
+                      class="form-check-input d-none"
+                      type="radio"
+                      value="expanded"
+                      id="layoutsRadiosexpanded"
+                      checked="checked"
+                    />
+                  </label>
+                </div>
+                <label class="form-check-label small text-nowrap" for="layoutsRadiosexpanded">Expanded</label>
+              </div>
+              <div class="col-4 px-2">
+                <div class="form-check custom-option custom-option-icon">
+                  <label class="form-check-label custom-option-content p-0" for="layoutsRadioscollapsed">
+                    <span class="custom-option-body mb-0">
+                      <img
+                        src="./Login Cover - Pages _ Materio - Bootstrap 5 HTML + Laravel Admin Template_files/collapsed.svg"
+                        alt="Collapsed"
+                        class="img-fluid scaleX-n1-rtl"
+                      />
+                    </span>
+                    <input
+                      name="layoutsRadios"
+                      class="form-check-input d-none"
+                      type="radio"
+                      value="collapsed"
+                      id="layoutsRadioscollapsed"
+                    />
+                  </label>
+                </div>
+                <label class="form-check-label small text-nowrap" for="layoutsRadioscollapsed">Collapsed</label>
+              </div>
+            </div>
+          </div>
+
+          <!-- Header Options for Horizontal -->
+          <div class="m-0 px-5 pb-6 template-customizer-headerOptions w-100">
+            <label for="customizerHeader" class="form-label template-customizer-t-layout_header_label"
+              >Header Types</label
+            >
+            <div class="row px-1 template-customizer-header-options">
+              <div class="col-4 px-2">
+                <div class="form-check custom-option custom-option-icon checked">
+                  <label class="form-check-label custom-option-content p-0" for="headerRadioIconfixed">
+                    <span class="custom-option-body mb-0">
+                      <img
+                        src="./Login Cover - Pages _ Materio - Bootstrap 5 HTML + Laravel Admin Template_files/horizontal-fixed.svg"
+                        alt="Fixed"
+                        class="img-fluid scaleX-n1-rtl"
+                      />
+                    </span>
+                    <input
+                      name="headerRadioIcon"
+                      class="form-check-input d-none"
+                      type="radio"
+                      value="fixed"
+                      id="headerRadioIconfixed"
+                      checked="checked"
+                    />
+                  </label>
+                </div>
+                <label class="form-check-label small text-nowrap" for="headerRadioIconfixed">Fixed</label>
+              </div>
+              <div class="col-4 px-2">
+                <div class="form-check custom-option custom-option-icon">
+                  <label class="form-check-label custom-option-content p-0" for="headerRadioIconstatic">
+                    <span class="custom-option-body mb-0">
+                      <img
+                        src="./Login Cover - Pages _ Materio - Bootstrap 5 HTML + Laravel Admin Template_files/horizontal-static.svg"
+                        alt="Static"
+                        class="img-fluid scaleX-n1-rtl"
+                      />
+                    </span>
+                    <input
+                      name="headerRadioIcon"
+                      class="form-check-input d-none"
+                      type="radio"
+                      value="static"
+                      id="headerRadioIconstatic"
+                    />
+                  </label>
+                </div>
+                <label class="form-check-label small text-nowrap" for="headerRadioIconstatic">Static</label>
+              </div>
+            </div>
+          </div>
+
+          <!-- Fixed navbar -->
+          <div class="m-0 px-5 pb-6 template-customizer-layoutNavbarOptions w-100">
+            <label for="customizerNavbar" class="form-label template-customizer-t-layout_navbar_label"
+              >Navbar Type</label
+            >
+            <div class="row px-1 template-customizer-navbar-options">
+              <div class="col-4 px-2">
+                <div class="form-check custom-option custom-option-icon">
+                  <label class="form-check-label custom-option-content p-0" for="navbarOptionRadiossticky">
+                    <span class="custom-option-body mb-0">
+                      <img
+                        src="./Login Cover - Pages _ Materio - Bootstrap 5 HTML + Laravel Admin Template_files/sticky.svg"
+                        alt="Sticky"
+                        class="img-fluid scaleX-n1-rtl"
+                      />
+                    </span>
+                    <input
+                      name="navbarOptionRadios"
+                      class="form-check-input d-none"
+                      type="radio"
+                      value="sticky"
+                      id="navbarOptionRadiossticky"
+                    />
+                  </label>
+                </div>
+                <label class="form-check-label small text-nowrap" for="navbarOptionRadiossticky">Sticky</label>
+              </div>
+              <div class="col-4 px-2">
+                <div class="form-check custom-option custom-option-icon checked">
+                  <label class="form-check-label custom-option-content p-0" for="navbarOptionRadiosstatic">
+                    <span class="custom-option-body mb-0">
+                      <img
+                        src="./Login Cover - Pages _ Materio - Bootstrap 5 HTML + Laravel Admin Template_files/static.svg"
+                        alt="Static"
+                        class="img-fluid scaleX-n1-rtl"
+                      />
+                    </span>
+                    <input
+                      name="navbarOptionRadios"
+                      class="form-check-input d-none"
+                      type="radio"
+                      value="static"
+                      id="navbarOptionRadiosstatic"
+                      checked="checked"
+                    />
+                  </label>
+                </div>
+                <label class="form-check-label small text-nowrap" for="navbarOptionRadiosstatic">Static</label>
+              </div>
+              <div class="col-4 px-2">
+                <div class="form-check custom-option custom-option-icon">
+                  <label class="form-check-label custom-option-content p-0" for="navbarOptionRadioshidden">
+                    <span class="custom-option-body mb-0">
+                      <img
+                        src="./Login Cover - Pages _ Materio - Bootstrap 5 HTML + Laravel Admin Template_files/hidden.svg"
+                        alt="Hidden"
+                        class="img-fluid scaleX-n1-rtl"
+                      />
+                    </span>
+                    <input
+                      name="navbarOptionRadios"
+                      class="form-check-input d-none"
+                      type="radio"
+                      value="hidden"
+                      id="navbarOptionRadioshidden"
+                    />
+                  </label>
+                </div>
+                <label class="form-check-label small text-nowrap" for="navbarOptionRadioshidden">Hidden</label>
+              </div>
+            </div>
+          </div>
+
+          <!-- Content -->
+          <div class="m-0 px-5 pb-6 template-customizer-content w-100">
+            <label for="customizerContent" class="form-label template-customizer-t-content_label">Content</label>
+            <div class="row px-1 template-customizer-content-options">
+              <div class="col-4 px-2">
+                <div class="form-check custom-option custom-option-icon checked">
+                  <label class="form-check-label custom-option-content p-0" for="contentRadioIconcompact">
+                    <span class="custom-option-body mb-0">
+                      <img
+                        src="./Login Cover - Pages _ Materio - Bootstrap 5 HTML + Laravel Admin Template_files/compact.svg"
+                        alt="Compact"
+                        class="img-fluid scaleX-n1-rtl"
+                      />
+                    </span>
+                    <input
+                      name="contentRadioIcon"
+                      class="form-check-input d-none"
+                      type="radio"
+                      value="compact"
+                      id="contentRadioIconcompact"
+                      checked="checked"
+                    />
+                  </label>
+                </div>
+                <label class="form-check-label small text-nowrap" for="contentRadioIconcompact">Compact</label>
+              </div>
+              <div class="col-4 px-2">
+                <div class="form-check custom-option custom-option-icon">
+                  <label class="form-check-label custom-option-content p-0" for="contentRadioIconwide">
+                    <span class="custom-option-body mb-0">
+                      <img
+                        src="./Login Cover - Pages _ Materio - Bootstrap 5 HTML + Laravel Admin Template_files/wide.svg"
+                        alt="Wide"
+                        class="img-fluid scaleX-n1-rtl"
+                      />
+                    </span>
+                    <input
+                      name="contentRadioIcon"
+                      class="form-check-input d-none"
+                      type="radio"
+                      value="wide"
+                      id="contentRadioIconwide"
+                    />
+                  </label>
+                </div>
+                <label class="form-check-label small text-nowrap" for="contentRadioIconwide">Wide</label>
+              </div>
+            </div>
+          </div>
+
+          <!-- Directions -->
+          <div class="m-0 px-5 pb-6 template-customizer-directions w-100">
+            <label for="customizerDirection" class="form-label template-customizer-t-direction_label">Direction</label>
+            <div class="row px-1 template-customizer-directions-options">
+              <div class="col-4 px-2">
+                <div class="form-check custom-option custom-option-icon checked">
+                  <label class="form-check-label custom-option-content p-0" for="directionRadioIconltr">
+                    <span class="custom-option-body mb-0">
+                      <img
+                        src="./Login Cover - Pages _ Materio - Bootstrap 5 HTML + Laravel Admin Template_files/ltr.svg"
+                        alt="Left to Right (En)"
+                        class="img-fluid scaleX-n1-rtl"
+                      />
+                    </span>
+                    <input
+                      name="directionRadioIcon"
+                      class="form-check-input d-none"
+                      type="radio"
+                      value="ltr"
+                      id="directionRadioIconltr"
+                      checked="checked"
+                    />
+                  </label>
+                </div>
+                <label class="form-check-label small text-nowrap" for="directionRadioIconltr">Left to Right (En)</label>
+              </div>
+              <div class="col-4 px-2">
+                <div class="form-check custom-option custom-option-icon">
+                  <label class="form-check-label custom-option-content p-0" for="directionRadioIconrtl">
+                    <span class="custom-option-body mb-0">
+                      <img
+                        src="./Login Cover - Pages _ Materio - Bootstrap 5 HTML + Laravel Admin Template_files/rtl.svg"
+                        alt="Right to Left (Ar)"
+                        class="img-fluid scaleX-n1-rtl"
+                      />
+                    </span>
+                    <input
+                      name="directionRadioIcon"
+                      class="form-check-input d-none"
+                      type="radio"
+                      value="rtl"
+                      id="directionRadioIconrtl"
+                    />
+                  </label>
+                </div>
+                <label class="form-check-label small text-nowrap" for="directionRadioIconrtl">Right to Left (Ar)</label>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--/ Layout -->
+      </div>
+    </div>
+    <script type="text/javascript" id="" charset="">
+      console.log('TS:GTM Worked');
+    </script>
+    <div style="display: none; visibility: hidden">
+      <script>
+        (function (b, c, d) {
+          var a = b.createElement('script');
+          a.type = 'text/javascript';
+          a.src = 'https://a.omappapi.com/app/js/api.min.js';
+          a.async = !0;
+          a.dataset.user = c;
+          a.dataset.account = d;
+          b.getElementsByTagName('head')[0].appendChild(a);
+        })(document, 252882, 269977);
+      </script>
+    </div>
+    <div id="om-eoyitqydafqlbr4dkzdk-holder"></div>
+    <div id="om-t2cvewgxzlhaslslpbp7-holder"></div>
+    <div id="om-n46voiqfo0igqz4admvr-holder">
+      <style data-styled="true" data-styled-version="5.3.11">
+        .lfTTpH {
+          background: linear-gradient(91deg, #3d6675 0%, #fc7575 100%) !important;
+          border-bottom-left-radius: 30px !important;
+          border-bottom-right-radius: 30px !important;
+          border-bottom-width: 1px !important;
+          border-color: rgba(0, 0, 0, 0.35) !important;
+          border-left-width: 1px !important;
+          border-right-width: 1px !important;
+          border-style: none !important;
+          border-top-left-radius: 30px !important;
+          border-top-right-radius: 30px !important;
+          border-top-width: 1px !important;
+          box-shadow: none !important;
+          color: #ffffff !important;
+          font-family: Arial, sans-serif !important;
+          font-size: 18px !important;
+          font-weight: 700 !important;
+          -webkit-letter-spacing: 0px !important;
+          -moz-letter-spacing: 0px !important;
+          -ms-letter-spacing: 0px !important;
+          letter-spacing: 0px !important;
+          line-height: 1 !important;
+          margin-bottom: 0px !important;
+          margin-left: 0px !important;
+          margin-right: 0px !important;
+          margin-top: 0px !important;
+          max-width: 100% !important;
+          padding-bottom: 14px !important;
+          padding-left: 18px !important;
+          padding-right: 18px !important;
+          padding-top: 14px !important;
+          text-transform: none !important;
+          -webkit-text-decoration: none !important;
+          text-decoration: none !important;
+          font-style: normal !important;
+          width: 100% !important;
+          cursor: pointer;
+        } /*!sc*/
+        .lfTTpH.withIcon {
+          display: -webkit-inline-box;
+          display: -webkit-inline-flex;
+          display: -ms-inline-flexbox;
+          display: inline-flex;
+          -webkit-box-pack: center;
+          -webkit-justify-content: center;
+          -ms-flex-pack: center;
+          justify-content: center;
+          -webkit-align-items: center;
+          -webkit-box-align: center;
+          -ms-flex-align: center;
+          align-items: center;
+          -ms-flex-direction: row;
+          -webkit-flex-direction: row;
+          -ms-flex-direction: row;
+          flex-direction: row;
+        } /*!sc*/
+        .lfTTpH.withIcon:focus,
+        .lfTTpH.withIcon:hover,
+        .lfTTpH.withIcon.is-editing-hover {
+          -ms-flex-direction: row;
+          -webkit-flex-direction: row;
+          -ms-flex-direction: row;
+          flex-direction: row;
+        } /*!sc*/
+        .lfTTpH .naylor-yes-icon--l3gFHPTC69kd47I2HDri {
+          color: #ffffff !important;
+          margin-right: NaNpx !important;
+        } /*!sc*/
+        .lfTTpH .naylor-hover-yes-icon--l3gFHPTC69kd47I2HDri {
+          display: none !important;
+          color: #222222 !important;
+          margin-right: NaNpx !important;
+        } /*!sc*/
+        .lfTTpH:focus,
+        .lfTTpH:hover,
+        .lfTTpH.is-editing-hover {
+          background: #dab120 !important;
+          box-shadow: none !important;
+          color: #222222 !important;
+          font-family: Arial, sans-serif !important;
+          font-size: 18px !important;
+          font-weight: 700 !important;
+          -webkit-letter-spacing: 0px !important;
+          -moz-letter-spacing: 0px !important;
+          -ms-letter-spacing: 0px !important;
+          letter-spacing: 0px !important;
+          line-height: 1 !important;
+          text-transform: none !important;
+          -webkit-text-decoration: none !important;
+          text-decoration: none !important;
+          font-style: normal !important;
+          border-bottom-left-radius: 30px !important;
+          border-bottom-right-radius: 30px !important;
+          border-bottom-width: 1px !important;
+          border-color: rgba(0, 0, 0, 0.35) !important;
+          border-left-width: 1px !important;
+          border-right-width: 1px !important;
+          border-style: none !important;
+          border-top-left-radius: 30px !important;
+          border-top-right-radius: 30px !important;
+          border-top-width: 1px !important;
+        } /*!sc*/
+        .lfTTpH:focus .naylor-hover-yes-icon--l3gFHPTC69kd47I2HDri,
+        .lfTTpH:hover .naylor-hover-yes-icon--l3gFHPTC69kd47I2HDri,
+        .lfTTpH.is-editing-hover .naylor-hover-yes-icon--l3gFHPTC69kd47I2HDri {
+          display: inline-block !important;
+        } /*!sc*/
+        .lfTTpH:focus .naylor-yes-icon--l3gFHPTC69kd47I2HDri,
+        .lfTTpH:hover .naylor-yes-icon--l3gFHPTC69kd47I2HDri,
+        .lfTTpH.is-editing-hover .naylor-yes-icon--l3gFHPTC69kd47I2HDri {
+          display: none !important;
+        } /*!sc*/
+        .gzjEni {
+          background: transparent !important;
+          border-bottom-left-radius: 0px !important;
+          border-bottom-right-radius: 0px !important;
+          border-bottom-width: 0px !important;
+          border-color: rgba(0, 0, 0, 0.35) !important;
+          border-left-width: 0px !important;
+          border-right-width: 0px !important;
+          border-style: solid !important;
+          border-top-left-radius: 0px !important;
+          border-top-right-radius: 0px !important;
+          border-top-width: 0px !important;
+          box-shadow: 0px 0px 0px 0px #ffffff !important;
+          color: #00001d !important;
+          font-family: Verdana, sans-serif !important;
+          font-size: 14px !important;
+          font-weight: 400 !important;
+          -webkit-letter-spacing: 0 !important;
+          -moz-letter-spacing: 0 !important;
+          -ms-letter-spacing: 0 !important;
+          letter-spacing: 0 !important;
+          line-height: 1 !important;
+          margin-bottom: 0px !important;
+          margin-left: 0px !important;
+          margin-right: 0px !important;
+          margin-top: 0px !important;
+          max-width: 100% !important;
+          padding-bottom: 8px !important;
+          padding-left: 12px !important;
+          padding-right: 12px !important;
+          padding-top: 8px !important;
+          text-transform: none !important;
+          -webkit-text-decoration: none !important;
+          text-decoration: none !important;
+          font-style: normal !important;
+          width: 100% !important;
+          cursor: pointer;
+        } /*!sc*/
+        .gzjEni.withIcon {
+          display: -webkit-inline-box;
+          display: -webkit-inline-flex;
+          display: -ms-inline-flexbox;
+          display: inline-flex;
+          -webkit-box-pack: center;
+          -webkit-justify-content: center;
+          -ms-flex-pack: center;
+          justify-content: center;
+          -webkit-align-items: center;
+          -webkit-box-align: center;
+          -ms-flex-align: center;
+          align-items: center;
+          -ms-flex-direction: row;
+          -webkit-flex-direction: row;
+          -ms-flex-direction: row;
+          flex-direction: row;
+        } /*!sc*/
+        .gzjEni.withIcon:focus,
+        .gzjEni.withIcon:hover,
+        .gzjEni.withIcon.is-editing-hover {
+          -ms-flex-direction: row;
+          -webkit-flex-direction: row;
+          -ms-flex-direction: row;
+          flex-direction: row;
+        } /*!sc*/
+        .gzjEni .naylor-no-icon--l3gFHPTC69kd47I2HDri {
+          color: #00001d !important;
+          margin-right: NaNpx !important;
+        } /*!sc*/
+        .gzjEni .naylor-hover-no-icon--l3gFHPTC69kd47I2HDri {
+          display: none !important;
+          color: #ffffff !important;
+          margin-right: NaNpx !important;
+        } /*!sc*/
+        .gzjEni:focus,
+        .gzjEni:hover,
+        .gzjEni.is-editing-hover {
+          background: transparent !important;
+        } /*!sc*/
+        .gzjEni:focus .naylor-hover-no-icon--l3gFHPTC69kd47I2HDri,
+        .gzjEni:hover .naylor-hover-no-icon--l3gFHPTC69kd47I2HDri,
+        .gzjEni.is-editing-hover .naylor-hover-no-icon--l3gFHPTC69kd47I2HDri {
+          display: inline-block !important;
+        } /*!sc*/
+        .gzjEni:focus .naylor-no-icon--l3gFHPTC69kd47I2HDri,
+        .gzjEni:hover .naylor-no-icon--l3gFHPTC69kd47I2HDri,
+        .gzjEni.is-editing-hover .naylor-no-icon--l3gFHPTC69kd47I2HDri {
+          display: inline-block !important;
+        } /*!sc*/
+        data-styled.g1[id='StyledIconButtonElement-sc-114x20d-0'] {
+          content: 'lfTTpH,gzjEni,';
+        } /*!sc*/
+        .gmsXlw {
+          background: #ffffff;
+        } /*!sc*/
+        .iHarVC {
+          background: rgba(255, 255, 255, 0);
+        } /*!sc*/
+        .hVluvJ {
+          background: transparent;
+        } /*!sc*/
+        .elScCr {
+          background: #ffefee;
+        } /*!sc*/
+        data-styled.g2[id='StyledBackgroundWrapper__BackgroundWrapper-sc-4136c0-0'] {
+          content: 'gmsXlw,brbwAg,iHarVC,hVluvJ,elScCr,';
+        } /*!sc*/
+        .bdDEKG .ModalV2__Content--header {
+          -webkit-align-items: center;
+          -webkit-box-align: center;
+          -ms-flex-align: center;
+          align-items: center;
+          display: -webkit-box;
+          display: -webkit-flex;
+          display: -ms-flexbox;
+          display: flex;
+          -webkit-box-pack: end;
+          -webkit-justify-content: flex-end;
+          -ms-flex-pack: end;
+          justify-content: flex-end;
+          line-height: 1;
+          padding: 10px 10px 10px 20px;
+          width: 100%;
+        } /*!sc*/
+        .bdDEKG .ModalV2__Content--header-close {
+          color: #9fb5da;
+          cursor: pointer;
+          display: -webkit-box;
+          display: -webkit-flex;
+          display: -ms-flexbox;
+          display: flex;
+          padding: 10px;
+        } /*!sc*/
+        .bdDEKG .ModalV2__Content--content {
+          height: 100%;
+          overflow: auto;
+          padding: 0 50px 50px;
+          width: 100%;
+        } /*!sc*/
+        .bdDEKG .ModalV2__Content {
+          background-color: #fff;
+          border-radius: 4px;
+          border: none;
+          box-shadow: 0 0 18px 6px rgba(35, 48, 70, 0.25);
+          display: -webkit-box;
+          display: -webkit-flex;
+          display: -ms-flexbox;
+          display: flex;
+          -webkit-flex-direction: column;
+          -ms-flex-direction: column;
+          flex-direction: column;
+          max-width: 650px;
+          outline: none;
+          overflow: auto;
+          width: 100%;
+        } /*!sc*/
+        .bdDEKG .ModalV2__Content p {
+          line-height: 1.4;
+        } /*!sc*/
+        .bdDEKG .ModalV2__Content p a {
+          color: #0d82df;
+          font-weight: bold;
+          -webkit-text-decoration: underline;
+          text-decoration: underline;
+        } /*!sc*/
+        .bdDEKG .ModalV2__Overlay {
+          -webkit-align-items: center;
+          -webkit-box-align: center;
+          -ms-flex-align: center;
+          align-items: center;
+          background-color: rgba(255, 255, 255, 0.8);
+          bottom: 0;
+          display: -webkit-box;
+          display: -webkit-flex;
+          display: -ms-flexbox;
+          display: flex;
+          -webkit-box-pack: center;
+          -webkit-justify-content: center;
+          -ms-flex-pack: center;
+          justify-content: center;
+          left: 0;
+          position: fixed;
+          right: 0;
+          top: 0;
+          z-index: 1010;
+        } /*!sc*/
+        data-styled.g79[id='ModalV2__StyledModal-sc-1yn120z-0'] {
+          content: 'bdDEKG,';
+        } /*!sc*/
+        .paETm * {
+          box-sizing: border-box;
+        } /*!sc*/
+        .paETm .ModalV2__Content--header {
+          height: 60px;
+          padding: 20px 40px;
+          -webkit-box-pack: justify;
+          -webkit-justify-content: space-between;
+          -ms-flex-pack: justify;
+          justify-content: space-between;
+        } /*!sc*/
+        .paETm .ModalV2__Content--header-content {
+          font-size: 20px;
+          font-weight: 700;
+          display: -webkit-box;
+          display: -webkit-flex;
+          display: -ms-flexbox;
+          display: flex;
+        } /*!sc*/
+        .paETm .ModalV2__Content--header-content svg {
+          margin-right: 8px;
+        } /*!sc*/
+        .paETm .ModalV2__Content--header-close {
+          background-color: transparent;
+          border: none;
+          padding: 0px;
+        } /*!sc*/
+        .paETm .ModalV2__Content--header-close svg {
+          width: 14px;
+          height: 14px;
+        } /*!sc*/
+        .paETm .ModalV2__Content--content {
+          padding: 20px 40px;
+        } /*!sc*/
+        .paETm .ModalV2__Content {
+          max-width: 570px;
+          max-height: 80%;
+        } /*!sc*/
+        .gNQvvM * {
+          box-sizing: border-box;
+        } /*!sc*/
+        .gNQvvM .ModalV2__Content--header {
+          height: 60px;
+          padding: 20px 40px;
+          -webkit-box-pack: justify;
+          -webkit-justify-content: space-between;
+          -ms-flex-pack: justify;
+          justify-content: space-between;
+        } /*!sc*/
+        .gNQvvM .ModalV2__Content--header-content {
+          font-size: 20px;
+          font-weight: 700;
+          display: -webkit-box;
+          display: -webkit-flex;
+          display: -ms-flexbox;
+          display: flex;
+        } /*!sc*/
+        .gNQvvM .ModalV2__Content--header-content svg {
+          margin-right: 8px;
+        } /*!sc*/
+        .gNQvvM .ModalV2__Content--header-close {
+          background-color: transparent;
+          border: none;
+          padding: 0px;
+        } /*!sc*/
+        .gNQvvM .ModalV2__Content--header-close svg {
+          width: 14px;
+          height: 14px;
+        } /*!sc*/
+        .gNQvvM .ModalV2__Content--content {
+          padding: 20px 40px;
+        } /*!sc*/
+        .gNQvvM .ModalV2__Content {
+          max-width: 800px;
+          max-height: 80%;
+        } /*!sc*/
+        data-styled.g80[id='Modal__StyledModal-sc-1vmqztf-0'] {
+          content: 'paETm,gNQvvM,';
+        } /*!sc*/
+        .fkgMeR * {
+          box-sizing: border-box;
+        } /*!sc*/
+        .fkgMeR .ModalV2__Content--header {
+          height: 40px;
+          padding: 20px 20px 10px 20px;
+          -webkit-box-pack: end;
+          -webkit-justify-content: flex-end;
+          -ms-flex-pack: end;
+          justify-content: flex-end;
+        } /*!sc*/
+        .fkgMeR .ModalV2__Content--header-close {
+          background-color: transparent;
+          border: none;
+          padding: 0px;
+        } /*!sc*/
+        .fkgMeR .ModalV2__Content--header-close svg {
+          width: 14px;
+          height: 14px;
+        } /*!sc*/
+        .fkgMeR .ModalV2__Content--content {
+          padding: 0 60px 40px 60px;
+        } /*!sc*/
+        .fkgMeR .ModalV2__Content {
+          max-height: 80%;
+          max-width: 570px;
+          min-width: 500px;
+          width: 570px;
+        } /*!sc*/
+        .daFbDN * {
+          box-sizing: border-box;
+        } /*!sc*/
+        .daFbDN .ModalV2__Content--header {
+          height: 40px;
+          padding: 20px 20px 10px 20px;
+          -webkit-box-pack: end;
+          -webkit-justify-content: flex-end;
+          -ms-flex-pack: end;
+          justify-content: flex-end;
+        } /*!sc*/
+        .daFbDN .ModalV2__Content--header-close {
+          background-color: transparent;
+          border: none;
+          padding: 0px;
+        } /*!sc*/
+        .daFbDN .ModalV2__Content--header-close svg {
+          width: 14px;
+          height: 14px;
+        } /*!sc*/
+        .daFbDN .ModalV2__Content--content {
+          padding: 0 60px 40px 60px;
+        } /*!sc*/
+        .daFbDN .ModalV2__Content {
+          max-height: 80%;
+          max-width: 800px;
+          min-width: 500px;
+          width: 800px;
+        } /*!sc*/
+        data-styled.g81[id='WhiteModal__StyledModal-sc-147xomf-0'] {
+          content: 'fkgMeR,daFbDN,';
+        } /*!sc*/
+        .ficGRh {
+          position: absolute !important;
+          cursor: pointer !important;
+          z-index: 1110 !important;
+          border: none !important;
+          background-color: rgba(255, 255, 255, 0.45) !important;
+          padding-top: 5px !important;
+          padding-right: 5px !important;
+          padding-bottom: 5px !important;
+          padding-left: 5px !important;
+          margin-top: 25px !important;
+          margin-right: 25px !important;
+          margin-bottom: 0px !important;
+          margin-left: 0px !important;
+          color: #13005a !important;
+          border-radius: 100% !important;
+          box-shadow: 0px 0px 0px 0px #33333 !important;
+          min-width: auto !important;
+        } /*!sc*/
+        .ficGRh:hover,
+        .ficGRh.is-editing-hover {
+          border: none !important;
+          background-color: rgba(255, 255, 255, 0.85) !important;
+          color: #6e66ed !important;
+        } /*!sc*/
+        .ficGRh svg {
+          fill: inherit !important;
+        } /*!sc*/
+        data-styled.g401[id='CloseButton__ButtonElement-sc-79mh24-0'] {
+          content: 'ficGRh,';
+        } /*!sc*/
+        .gWmuIY {
+          position: relative;
+        } /*!sc*/
+        .gWmuIY .Row__content {
+          display: -webkit-box;
+          display: -webkit-flex;
+          display: -ms-flexbox;
+          display: flex;
+        } /*!sc*/
+        data-styled.g616[id='Row__StyledRow-sc-3p43ya-0'] {
+          content: 'gWmuIY,';
+        } /*!sc*/
+      </style>
+    </div>
+    <div
+      class="naylor-campaign Campaign CampaignType--slide Campaign--css naylor-close-triggered"
+      id="om-n46voiqfo0igqz4admvr"
+      style="
+        border: 0px;
+        float: none;
+        letter-spacing: normal;
+        outline: none;
+        text-decoration: none;
+        text-indent: 0px;
+        text-shadow: none;
+        text-transform: none;
+        visibility: visible;
+        line-height: 1;
+        font-family: Arial, sans-serif;
+        box-shadow: none;
+        -webkit-font-smoothing: antialiased;
+        appearance: none;
+        max-width: 350px;
+        background: transparent;
+        width: 100%;
+        position: fixed;
+        right: 20px;
+        height: auto;
+        z-index: 777777777;
+        display: none;
+        bottom: 0px;
+        transition: bottom 0.3s;
+        opacity: 0;
+      "
+    >
+      <div id="om-n46voiqfo0igqz4admvr-yesno" class="naylor-c-canvas Campaign__canvas" style="display: block">
+        <div class="naylor-c-wrapper Campaign__innerWrapper Slide--open" style="position: relative; display: block">
+          <button
+            class="CloseButton__ButtonElement-sc-79mh24-0 ficGRh naylor-CloseButton naylor-close naylor-ClosePosition--top-right"
+            style="top: -15px; right: -15px; bottom: auto; left: auto"
+            title="Close"
+          >
+            <svg
+              height="30"
+              version="1.1"
+              width="30"
+              xmlns="http://www.w3.org/2000/svg"
+              style="display: block; height: 18px; width: 18px"
+              role="img"
+              viewBox="0 0 320 512"
+            >
+              <path
+                d="M207.6 256l107.72-107.72c6.23-6.23 6.23-16.34 0-22.58l-25.03-25.03c-6.23-6.23-16.34-6.23-22.58 0L160 208.4 52.28 100.68c-6.23-6.23-16.34-6.23-22.58 0L4.68 125.7c-6.23 6.23-6.23 16.34 0 22.58L112.4 256 4.68 363.72c-6.23 6.23-6.23 16.34 0 22.58l25.03 25.03c6.23 6.23 16.34 6.23 22.58 0L160 303.6l107.72 107.72c6.23 6.23 16.34 6.23 22.58 0l25.03-25.03c6.23-6.23 6.23-16.34 0-22.58L207.6 256z"
+                fill="currentColor"
+              ></path>
+            </svg>
+          </button>
+          <div
+            style="
+              border-top-width: 0px;
+              border-right-width: 0px;
+              border-bottom-width: 0px;
+              border-left-width: 0px;
+              border-color: #b1bacb;
+              border-style: none;
+              border-top-left-radius: 20px;
+              border-top-right-radius: 20px;
+              border-bottom-right-radius: 20px;
+              border-bottom-left-radius: 20px;
+              box-shadow: 0px 10px 30px 0px rgba(0, 0, 0, 0.5);
+              position: relative;
+              z-index: 2;
+            "
+            class="StyledBackgroundWrapper__BackgroundWrapper-sc-4136c0-0 gmsXlw naylor-c-alpha Campaign__alphaLayer"
+          >
+            <div
+              class="StyledBackgroundWrapper__BackgroundWrapper-sc-4136c0-0 brbwAg naylor-c-bravo Campaign__bravoLayer"
+            >
+              <div
+                class="naylor-c-content Campaign__content"
+                style="
+                  position: relative;
+                  display: block;
+                  min-height: 20px;
+                  clear: both;
+                  padding-top: 0.0001em;
+                  padding-right: 0.0001em;
+                  padding-left: 0.0001em;
+                  padding-bottom: 0.0001em;
+                  background: none;
+                "
+              >
+                <style id="om-n46voiqfo0igqz4admvr-ResetCSS" type="text/css">
+                  html div#om-n46voiqfo0igqz4admvr .naylor-c-canvas applet,
+                  html div#om-n46voiqfo0igqz4admvr .naylor-c-canvas object,
+                  html
+                    div#om-n46voiqfo0igqz4admvr
+                    .naylor-c-canvas
+                    div:not(.Campaign__content):not(.Row__content):not(.Column__content):not(.Element__content):not(
+                      .ignore-reset
+                    ):not([class^='wpforms-']),
+                  html div#om-n46voiqfo0igqz4admvr .naylor-c-canvas span:not(.ignore-reset):not([class^='wpforms-']),
+                  html div#om-n46voiqfo0igqz4admvr .naylor-c-canvas iframe,
+                  html div#om-n46voiqfo0igqz4admvr .naylor-c-canvas h1:not(.ignore-reset):not([class^='wpforms-']),
+                  html div#om-n46voiqfo0igqz4admvr .naylor-c-canvas h2:not(.ignore-reset):not([class^='wpforms-']),
+                  html div#om-n46voiqfo0igqz4admvr .naylor-c-canvas h3:not(.ignore-reset):not([class^='wpforms-']),
+                  html div#om-n46voiqfo0igqz4admvr .naylor-c-canvas h4:not(.ignore-reset):not([class^='wpforms-']),
+                  html div#om-n46voiqfo0igqz4admvr .naylor-c-canvas h5:not(.ignore-reset):not([class^='wpforms-']),
+                  html div#om-n46voiqfo0igqz4admvr .naylor-c-canvas h6:not(.ignore-reset):not([class^='wpforms-']),
+                  html div#om-n46voiqfo0igqz4admvr .naylor-c-canvas p,
+                  html div#om-n46voiqfo0igqz4admvr .naylor-c-canvas blockquote,
+                  html div#om-n46voiqfo0igqz4admvr .naylor-c-canvas pre,
+                  html div#om-n46voiqfo0igqz4admvr .naylor-c-canvas a:not(.ignore-reset):not([class^='wpforms-']),
+                  html div#om-n46voiqfo0igqz4admvr .naylor-c-canvas abbr,
+                  html div#om-n46voiqfo0igqz4admvr .naylor-c-canvas acronym,
+                  html div#om-n46voiqfo0igqz4admvr .naylor-c-canvas address,
+                  html div#om-n46voiqfo0igqz4admvr .naylor-c-canvas big,
+                  html div#om-n46voiqfo0igqz4admvr .naylor-c-canvas cite,
+                  html div#om-n46voiqfo0igqz4admvr .naylor-c-canvas code,
+                  html div#om-n46voiqfo0igqz4admvr .naylor-c-canvas del,
+                  html div#om-n46voiqfo0igqz4admvr .naylor-c-canvas dfn,
+                  html div#om-n46voiqfo0igqz4admvr .naylor-c-canvas em,
+                  html div#om-n46voiqfo0igqz4admvr .naylor-c-canvas img,
+                  html div#om-n46voiqfo0igqz4admvr .naylor-c-canvas ins,
+                  html div#om-n46voiqfo0igqz4admvr .naylor-c-canvas kbd,
+                  html div#om-n46voiqfo0igqz4admvr .naylor-c-canvas q,
+                  html div#om-n46voiqfo0igqz4admvr .naylor-c-canvas s,
+                  html div#om-n46voiqfo0igqz4admvr .naylor-c-canvas samp,
+                  html div#om-n46voiqfo0igqz4admvr .naylor-c-canvas small,
+                  html div#om-n46voiqfo0igqz4admvr .naylor-c-canvas strike,
+                  html div#om-n46voiqfo0igqz4admvr .naylor-c-canvas strong,
+                  html div#om-n46voiqfo0igqz4admvr .naylor-c-canvas sub,
+                  html div#om-n46voiqfo0igqz4admvr .naylor-c-canvas sup,
+                  html div#om-n46voiqfo0igqz4admvr .naylor-c-canvas tt,
+                  html div#om-n46voiqfo0igqz4admvr .naylor-c-canvas var,
+                  html div#om-n46voiqfo0igqz4admvr .naylor-c-canvas b,
+                  html div#om-n46voiqfo0igqz4admvr .naylor-c-canvas u,
+                  html div#om-n46voiqfo0igqz4admvr .naylor-c-canvas center,
+                  html div#om-n46voiqfo0igqz4admvr .naylor-c-canvas dl,
+                  html div#om-n46voiqfo0igqz4admvr .naylor-c-canvas dt,
+                  html div#om-n46voiqfo0igqz4admvr .naylor-c-canvas dd,
+                  html div#om-n46voiqfo0igqz4admvr .naylor-c-canvas ol:not(.ignore-reset):not([class^='wpforms-']),
+                  html div#om-n46voiqfo0igqz4admvr .naylor-c-canvas ul:not(.ignore-reset):not([class^='wpforms-']),
+                  html div#om-n46voiqfo0igqz4admvr .naylor-c-canvas li:not(.ignore-reset):not([class^='wpforms-']),
+                  html div#om-n46voiqfo0igqz4admvr .naylor-c-canvas fieldset,
+                  html div#om-n46voiqfo0igqz4admvr .naylor-c-canvas form:not([class^='wpforms-']),
+                  html div#om-n46voiqfo0igqz4admvr .naylor-c-canvas label:not(.ignore-reset):not([class^='wpforms-']),
+                  html div#om-n46voiqfo0igqz4admvr .naylor-c-canvas legend,
+                  html div#om-n46voiqfo0igqz4admvr .naylor-c-canvas table,
+                  html div#om-n46voiqfo0igqz4admvr .naylor-c-canvas caption,
+                  html div#om-n46voiqfo0igqz4admvr .naylor-c-canvas tbody,
+                  html div#om-n46voiqfo0igqz4admvr .naylor-c-canvas tfoot,
+                  html div#om-n46voiqfo0igqz4admvr .naylor-c-canvas thead,
+                  html div#om-n46voiqfo0igqz4admvr .naylor-c-canvas tr,
+                  html div#om-n46voiqfo0igqz4admvr .naylor-c-canvas th,
+                  html div#om-n46voiqfo0igqz4admvr .naylor-c-canvas td,
+                  html div#om-n46voiqfo0igqz4admvr .naylor-c-canvas article,
+                  html div#om-n46voiqfo0igqz4admvr .naylor-c-canvas aside,
+                  html div#om-n46voiqfo0igqz4admvr .naylor-c-canvas canvas,
+                  html div#om-n46voiqfo0igqz4admvr .naylor-c-canvas details,
+                  html div#om-n46voiqfo0igqz4admvr .naylor-c-canvas embed,
+                  html div#om-n46voiqfo0igqz4admvr .naylor-c-canvas figure,
+                  html div#om-n46voiqfo0igqz4admvr .naylor-c-canvas figcaption,
+                  html div#om-n46voiqfo0igqz4admvr .naylor-c-canvas footer,
+                  html div#om-n46voiqfo0igqz4admvr .naylor-c-canvas header,
+                  html div#om-n46voiqfo0igqz4admvr .naylor-c-canvas hgroup,
+                  html div#om-n46voiqfo0igqz4admvr .naylor-c-canvas menu,
+                  html div#om-n46voiqfo0igqz4admvr .naylor-c-canvas nav,
+                  html div#om-n46voiqfo0igqz4admvr .naylor-c-canvas output,
+                  html div#om-n46voiqfo0igqz4admvr .naylor-c-canvas ruby,
+                  html div#om-n46voiqfo0igqz4admvr .naylor-c-canvas section,
+                  html div#om-n46voiqfo0igqz4admvr .naylor-c-canvas summary,
+                  html div#om-n46voiqfo0igqz4admvr .naylor-c-canvas time,
+                  html div#om-n46voiqfo0igqz4admvr .naylor-c-canvas mark,
+                  html div#om-n46voiqfo0igqz4admvr .naylor-c-canvas audio,
+                  html div#om-n46voiqfo0igqz4admvr .naylor-c-canvas video,
+                  html div#om-n46voiqfo0igqz4admvr .naylor-c-canvas i:not(.fa):not([class^='wpforms-']) {
+                    margin: 0;
+                    padding: 0;
+                    border: 0;
+                    font-size: 100%;
+                    font: inherit;
+                    vertical-align: baseline;
+                  }
+                  html div#om-n46voiqfo0igqz4admvr .naylor-c-canvas div.Campaign__content,
+                  html div#om-n46voiqfo0igqz4admvr .naylor-c-canvas div.Row__content,
+                  html div#om-n46voiqfo0igqz4admvr .naylor-c-canvas div.Column__content,
+                  html div#om-n46voiqfo0igqz4admvr .naylor-c-canvas div.Element__content {
+                    margin: 0;
+                    border: 0;
+                    font-size: 100%;
+                    font: inherit;
+                    vertical-align: baseline;
+                  }</style
+                ><style id="om-n46voiqfo0igqz4admvr-CampaignCSS" type="text/css">
+                  html div#om-n46voiqfo0igqz4admvr .naylor-c-canvas *:not(.ignore-reset):not([class^='wpforms-']) {
+                    box-sizing: border-box;
+                  }
+                  html div#om-n46voiqfo0igqz4admvr .naylor-c-canvas .Element__content {
+                    min-height: 30px;
+                  }
+                  html div#om-n46voiqfo0igqz4admvr .naylor-c-canvas button:not(.ignore-reset):not([class^='wpforms-']) {
+                    width: auto;
+                  }
+
+                  html
+                    div#om-n46voiqfo0igqz4admvr
+                    .naylor-FieldsElement--wrapper
+                    input:not([type='submit']):not(.ignore-reset):not([class^='wpforms-']),
+                  html
+                    div#om-n46voiqfo0igqz4admvr
+                    .naylor-FieldsElement--wrapper
+                    select:not(.ignore-reset):not([class^='wpforms-']),
+                  html
+                    div#om-n46voiqfo0igqz4admvr
+                    .naylor-FieldsElement--wrapper
+                    textarea:not(.ignore-reset):not([class^='wpforms-']) {
+                    background-color: #fff;
+                    width: 100%;
+                    height: auto;
+                    border: 1px solid;
+                    padding: 10px 6px;
+                    overflow: hidden;
+                    margin: 0;
+                    vertical-align: middle;
+                    font-style: normal;
+                    width: 100%;
+                    line-height: 1.5;
+                  }
+
+                  html
+                    div#om-n46voiqfo0igqz4admvr
+                    .naylor-FieldsElement--wrapper
+                    textarea:not(.ignore-reset):not([class^='wpforms-']) {
+                    height: 60px;
+                  }
+
+                  html
+                    div#om-n46voiqfo0igqz4admvr
+                    .naylor-FieldsElement--wrapper
+                    textarea:not(.ignore-reset):not([class^='wpforms-']),
+                  html
+                    div#om-n46voiqfo0igqz4admvr
+                    .naylor-FieldsElement--wrapper
+                    input:not(.ignore-reset):not([class^='wpforms-']) {
+                    overflow: hidden;
+                    -webkit-appearance: none;
+                  }
+
+                  html
+                    div#om-n46voiqfo0igqz4admvr
+                    .naylor-FieldsElement--wrapper
+                    input[type='submit']:not(.ignore-reset):not([class^='wpforms-']),
+                  html
+                    div#om-n46voiqfo0igqz4admvr
+                    .naylor-FieldsElement--wrapper
+                    button:not(.ignore-reset):not([class^='wpforms-']) {
+                    cursor: pointer;
+                  }
+
+                  html
+                    div#om-n46voiqfo0igqz4admvr
+                    .naylor-FieldsElement--wrapper
+                    input[type='checkbox']:not(.ignore-reset):not([class^='wpforms-']),
+                  html
+                    div#om-n46voiqfo0igqz4admvr
+                    .naylor-FieldsElement--wrapper
+                    input[type='radio']:not(.ignore-reset):not([class^='wpforms-']) {
+                    width: auto !important;
+                    outline: invert none medium;
+                    padding: 0;
+                    margin: 0;
+                    height: auto !important;
+                    box-shadow: none;
+                    -webkit-box-shadow: none;
+                    -moz-box-shadow: none;
+                    display: inline;
+                  }
+
+                  html
+                    div#om-n46voiqfo0igqz4admvr
+                    .naylor-FieldsElement--wrapper
+                    input[type='checkbox']:not(.ignore-reset):not([class^='wpforms-']) {
+                    -webkit-appearance: checkbox;
+                  }
+
+                  html
+                    div#om-n46voiqfo0igqz4admvr
+                    .naylor-FieldsElement--wrapper
+                    input[type='radio']:not(.ignore-reset):not([class^='wpforms-']) {
+                    -webkit-appearance: radio;
+                  }
+                  html
+                    div#om-n46voiqfo0igqz4admvr
+                    .naylor-FieldsElement--wrapper
+                    strong:not(.ignore-reset):not([class^='wpforms-']) {
+                    font-weight: bolder;
+                  }
+                  html
+                    div#om-n46voiqfo0igqz4admvr
+                    .naylor-FieldsElement--wrapper
+                    em:not(.ignore-reset):not([class^='wpforms-']) {
+                    font-style: italic;
+                  }
+                  html
+                    div#om-n46voiqfo0igqz4admvr
+                    .naylor-FieldsElement--wrapper
+                    ul:not(.ignore-reset):not([class^='wpforms-']) {
+                    list-style-type: disc;
+                    margin: 1em 0 1em 1.5em;
+                  }
+                  html
+                    div#om-n46voiqfo0igqz4admvr
+                    .naylor-FieldsElement--wrapper
+                    ol:not(.ignore-reset):not([class^='wpforms-']) {
+                    list-style: decimal;
+                    margin: 1em 0 1em 1.5em;
+                  }
+
+                  html
+                    div#om-n46voiqfo0igqz4admvr
+                    .naylor-FieldsElement--wrapper
+                    sup:not(.ignore-reset):not([class^='wpforms-']) {
+                    top: -0.5em;
+                  }
+
+                  html
+                    div#om-n46voiqfo0igqz4admvr
+                    .naylor-FieldsElement--wrapper
+                    sub:not(.ignore-reset):not([class^='wpforms-']) {
+                    bottom: -0.5em;
+                  }
+
+                  html
+                    div#om-n46voiqfo0igqz4admvr
+                    .naylor-FieldsElement--wrapper
+                    sub:not(.ignore-reset):not([class^='wpforms-']),
+                  html
+                    div#om-n46voiqfo0igqz4admvr
+                    .naylor-FieldsElement--wrapper
+                    sup:not(.ignore-reset):not([class^='wpforms-']) {
+                    font-size: 75%;
+                    line-height: 0;
+                    position: relative;
+                    vertical-align: baseline;
+                  }
+
+                  html
+                    div#om-n46voiqfo0igqz4admvr
+                    .naylor-FieldsElement--wrapper
+                    p:not(.ignore-reset):not([class^='wpforms-']) {
+                    margin: 0 0 5px;
+                  }
+                  html
+                    div#om-n46voiqfo0igqz4admvr
+                    .naylor-FieldsElement--wrapper
+                    p:first-of-type:not(.ignore-reset):not([class^='wpforms-']) {
+                    margin-top: 0;
+                  }
+                  html
+                    div#om-n46voiqfo0igqz4admvr
+                    .naylor-FieldsElement--wrapper
+                    p:last-of-type:not(.ignore-reset):not([class^='wpforms-']) {
+                    margin-bottom: 0;
+                  }
+
+                  html
+                    div#om-n46voiqfo0igqz4admvr
+                    .naylor-TextElement--content
+                    strong:not(.ignore-reset):not([class^='wpforms-']) {
+                    font-weight: bolder;
+                  }
+                  html
+                    div#om-n46voiqfo0igqz4admvr
+                    .naylor-TextElement--content
+                    em:not(.ignore-reset):not([class^='wpforms-']) {
+                    font-style: italic;
+                  }
+                  html
+                    div#om-n46voiqfo0igqz4admvr
+                    .naylor-TextElement--content
+                    ul:not(.ignore-reset):not([class^='wpforms-']) {
+                    list-style-type: disc;
+                    margin: 1em 0 1em 1.5em;
+                  }
+                  html
+                    div#om-n46voiqfo0igqz4admvr
+                    .naylor-TextElement--content
+                    ol:not(.ignore-reset):not([class^='wpforms-']) {
+                    list-style: decimal;
+                    margin: 1em 0 1em 1.5em;
+                  }
+
+                  html
+                    div#om-n46voiqfo0igqz4admvr
+                    .naylor-TextElement--content
+                    sup:not(.ignore-reset):not([class^='wpforms-']) {
+                    top: -0.5em;
+                  }
+
+                  html
+                    div#om-n46voiqfo0igqz4admvr
+                    .naylor-TextElement--content
+                    sub:not(.ignore-reset):not([class^='wpforms-']) {
+                    bottom: -0.5em;
+                  }
+
+                  html
+                    div#om-n46voiqfo0igqz4admvr
+                    .naylor-TextElement--content
+                    sub:not(.ignore-reset):not([class^='wpforms-']),
+                  html
+                    div#om-n46voiqfo0igqz4admvr
+                    .naylor-TextElement--content
+                    sup:not(.ignore-reset):not([class^='wpforms-']) {
+                    font-size: 75%;
+                    line-height: 0;
+                    position: relative;
+                    vertical-align: baseline;
+                  }
+
+                  html
+                    div#om-n46voiqfo0igqz4admvr
+                    .naylor-TextElement--content
+                    p:not(.ignore-reset):not([class^='wpforms-']) {
+                    margin: 0 0 5px;
+                    font-weight: inherit !important;
+
+                    letter-spacing: inherit !important;
+                    text-transform: inherit !important;
+                  }
+                  html
+                    div#om-n46voiqfo0igqz4admvr
+                    .naylor-TextElement--content
+                    span.fr-emoticon:not(.ignore-reset):not([class^='wpforms-']) {
+                    vertical-align: middle !important;
+                  }
+                  html
+                    div#om-n46voiqfo0igqz4admvr
+                    .naylor-TextElement--content
+                    p:first-of-type:not(.ignore-reset):not([class^='wpforms-']) {
+                    margin-top: 0;
+                  }
+                  html
+                    div#om-n46voiqfo0igqz4admvr
+                    .naylor-TextElement--content
+                    p:last-of-type:not(.ignore-reset):not([class^='wpforms-']) {
+                    margin-bottom: 0;
+                  }
+
+                  html
+                    div#om-n46voiqfo0igqz4admvr
+                    .naylor-TextElement--content
+                    span[style~='color:']
+                    a:not(.ignore-reset):not([class^='wpforms-']) {
+                    color: inherit;
+                  }
+
+                  @media screen and (min-width: 1px) and (max-width: 768px) {
+                    html div#om-n46voiqfo0igqz4admvr .naylor-ClosePosition--top-right {
+                      right: 0 !important;
+                    }
+                    html div#om-n46voiqfo0igqz4admvr .naylor-ClosePosition--top-left {
+                      left: 0 !important;
+                    }
+                    html div#om-n46voiqfo0igqz4admvr .naylor-ClosePosition--bottom-right {
+                      right: 0 !important;
+                    }
+                    html div#om-n46voiqfo0igqz4admvr .naylor-ClosePosition--bottom-left {
+                      left: 0 !important;
+                    }
+
+                    html div#om-n46voiqfo0igqz4admvr .Row .Row__content,
+                    html div#om-n46voiqfo0igqz4admvr .om-row .Row__content {
+                      flex-direction: column;
+                    }
+
+                    html div#om-n46voiqfo0igqz4admvr .Row .Row__content .Column,
+                    html div#om-n46voiqfo0igqz4admvr .om-row .Row__content .om-column {
+                      width: 100% !important;
+                    }
+
+                    html div#om-n46voiqfo0igqz4admvr .FieldsElement--horizontal button {
+                      width: 100% !important;
+                    }
+                  }
+
+                  @media screen and (min-width: 1px) and (max-width: 428px) {
+                    html div#om-n46voiqfo0igqz4admvr.Campaign--css.CampaignType--slide {
+                      right: auto !important;
+                      max-width: 100% !important;
+                    }
+                  }</style
+                ><style id="om-n46voiqfo0igqz4admvr-CustomCSS" type="text/css">
+                  html div#om-n46voiqfo0igqz4admvr .naylor-CloseButton {
+                    top: -18px !important;
+                    right: -18px !important;
+                  }
+                  html div#om-n46voiqfo0igqz4admvr .naylor-CloseButton svg {
+                    height: 16px !important;
+                    width: 16px !important;
+                  }
+
+                  html div#om-n46voiqfo0igqz4admvr.naylor-campaign {
+                    bottom: 20px !important;
+                  }
+                </style>
+                <div class="Row__StyledRow-sc-3p43ya-0 gWmuIY naylor-row naylor-row-1 Row om-row">
+                  <div class="naylor-row-content Row__content">
+                    <div
+                      style="
+                        display: flex;
+                        width: 100%;
+                        flex-direction: inherit;
+                        align-items: flex-start;
+                        border-style: solid;
+                        border-color: #000000;
+                        border-top-left-radius: 0%;
+                        border-top-right-radius: 0%;
+                        border-bottom-right-radius: 0%;
+                        border-bottom-left-radius: 0%;
+                        border-top-width: 0;
+                        border-right-width: 0;
+                        border-bottom-width: 0;
+                        border-left-width: 0;
+                        padding-top: 0px;
+                        padding-right: 0px;
+                        padding-bottom: 0px;
+                        padding-left: 0px;
+                        margin-top: 0;
+                        margin-right: 0;
+                        margin-bottom: 0;
+                        margin-left: 0;
+                        box-shadow: 0px 0px 0px 0px #ffffff;
+                        max-width: 100%;
+                        z-index: 0;
+                      "
+                      class="StyledBackgroundWrapper__BackgroundWrapper-sc-4136c0-0 iHarVC naylor-row-inner"
+                    >
+                      <div
+                        class="naylor-column naylor-col-1 Column om-column"
+                        style="display: inline-block; width: 100%"
+                      >
+                        <div class="naylor-col-content Column__content" style="height: 100%">
+                          <div
+                            style="
+                              align-items: flex-start;
+                              border-style: solid;
+                              border-color: #000000;
+                              border-top-left-radius: 0%;
+                              border-top-right-radius: 0%;
+                              border-bottom-right-radius: 0%;
+                              border-bottom-left-radius: 0%;
+                              border-top-width: 0;
+                              border-right-width: 0;
+                              border-bottom-width: 0;
+                              border-left-width: 0;
+                              padding-top: 0;
+                              padding-right: 0;
+                              padding-bottom: 0;
+                              padding-left: 0;
+                              margin-top: 0;
+                              margin-right: 0;
+                              margin-bottom: 0;
+                              margin-left: 0;
+                              box-shadow: 0px 0px 0px 0px #ffffff;
+                              max-width: 100%;
+                              z-index: 0;
+                              height: 100%;
+                            "
+                            class="StyledBackgroundWrapper__BackgroundWrapper-sc-4136c0-0 hVluvJ naylor-col-inner"
+                          >
+                            <div class="naylor-element naylor-ele-1 Element om-element">
+                              <div class="naylor-ele-content Element__content">
+                                <div
+                                  id="naylor-ImageElement--wrapper--gsf9ZOMXXEs11js2Narc"
+                                  class="naylor-imge-wrapper naylor-ImageElement--wrapper"
+                                  style="
+                                    border-top-left-radius: 0px;
+                                    border-top-right-radius: 0px;
+                                    border-bottom-right-radius: 0px;
+                                    border-bottom-left-radius: 0px;
+                                    border-top-width: 0;
+                                    border-right-width: 0;
+                                    border-bottom-width: 0;
+                                    border-left-width: 0;
+                                    padding-top: 0px;
+                                    padding-right: 0px;
+                                    padding-bottom: 5px;
+                                    padding-left: 0px;
+                                    margin-top: 0px;
+                                    margin-right: 0px;
+                                    margin-bottom: 0px;
+                                    margin-left: 0px;
+                                    background: transparent;
+                                    border-style: solid;
+                                    border-color: #000000;
+                                    box-shadow: 0px 0px 0px 0px #ffffff;
+                                    width: auto;
+                                    max-width: 100%;
+                                    position: relative;
+                                    z-index: 0;
+                                    overflow: visible;
+                                    text-align: center;
+                                    font-size: 0;
+                                  "
+                                >
+                                  <div
+                                    class="naylor-imge-content naylor-ImageElement--content"
+                                    data-gablockid="om-gsf9ZOMXXEs11js2Narc-yesno-image"
+                                  >
+                                    <a
+                                      class="om-trigger-conversion"
+                                      href="https://themeselection.com/item/celebration-big-bundle-sale/"
+                                      target="_blank"
+                                      ><img
+                                        alt="ThemeSelection Big Bundle "
+                                        src="./Login Cover - Pages _ Materio - Bootstrap 5 HTML + Laravel Admin Template_files/01b3b753e5d21715691645-spring-big-bundle-optinmonster-banner.png"
+                                        style="
+                                          max-width: 100%;
+                                          height: auto;
+                                          display: inline;
+                                          border-top-left-radius: 20px;
+                                          border-top-right-radius: 20px;
+                                          border-bottom-right-radius: 0px;
+                                          border-bottom-left-radius: 0px;
+                                          border-top-width: 0px;
+                                          border-right-width: 0px;
+                                          border-bottom-width: 0px;
+                                          border-left-width: 0px;
+                                          border-style: solid;
+                                          border-color: #ffffff;
+                                          box-shadow: 0px 0px 0px 0px #ffffff;
+                                          opacity: 1;
+                                          width: 100%;
+                                        "
+                                        width="350"
+                                        height="296"
+                                        srcset="
+                                          https://a.omappapi.com/users/9656320a258c/images/01b3b753e5d21715691645-spring-big-bundle-optinmonster-banner.png?width=350  1x,
+                                          https://a.omappapi.com/users/9656320a258c/images/01b3b753e5d21715691645-spring-big-bundle-optinmonster-banner.png?width=525  1.5x,
+                                          https://a.omappapi.com/users/9656320a258c/images/01b3b753e5d21715691645-spring-big-bundle-optinmonster-banner.png?width=700  2x,
+                                          https://a.omappapi.com/users/9656320a258c/images/01b3b753e5d21715691645-spring-big-bundle-optinmonster-banner.png?width=1050 3x
+                                        "
+                                    /></a>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="naylor-element naylor-ele-2 Element om-element">
+                              <div class="naylor-ele-content Element__content">
+                                <div
+                                  class="naylor-cde-wrapper naylor-CountdownElement--wrapper"
+                                  id="naylor-CountdownElement--wrapper--wuIdPMbKLeeldpt5wVye"
+                                  style="
+                                    border-top-left-radius: 3px;
+                                    border-top-right-radius: 3px;
+                                    border-bottom-right-radius: 3px;
+                                    border-bottom-left-radius: 3px;
+                                    border-top-width: 0;
+                                    border-right-width: 0;
+                                    border-bottom-width: 0;
+                                    border-left-width: 0;
+                                    padding-top: 0px;
+                                    padding-right: 0px;
+                                    padding-bottom: 0px;
+                                    padding-left: 0px;
+                                    margin-top: 10px;
+                                    margin-right: 0px;
+                                    margin-bottom: 0px;
+                                    margin-left: 0px;
+                                    background: transparent;
+                                    border-style: solid;
+                                    border-color: #000000;
+                                    box-shadow: 0px 0px 0px 0px #ffffff;
+                                    width: auto;
+                                    max-width: 100%;
+                                    position: relative;
+                                    z-index: 0;
+                                    text-align: center;
+                                  "
+                                >
+                                  <div
+                                    id="naylor-CountdownElement--wuIdPMbKLeeldpt5wVye"
+                                    class="naylor-cde-content naylor-CountdownElement--content"
+                                    data-omcd-time="1748619000"
+                                    data-omcd-type="static"
+                                    data-omcd-id="wuIdPMbKLeeldpt5wVye"
+                                    data-omcd-local="true"
+                                    data-gablockid="om-wuIdPMbKLeeldpt5wVye-yesno-countdown"
+                                  >
+                                    <div
+                                      style="
+                                        border-top-left-radius: 10px;
+                                        border-top-right-radius: 10px;
+                                        border-bottom-right-radius: 10px;
+                                        border-bottom-left-radius: 10px;
+                                        border-top-width: 0px;
+                                        border-right-width: 0px;
+                                        border-bottom-width: 0px;
+                                        border-left-width: 0px;
+                                        padding-top: 12px;
+                                        padding-right: 14px;
+                                        padding-bottom: 12px;
+                                        padding-left: 13px;
+                                        margin-top: 0px;
+                                        margin-right: 5px;
+                                        margin-bottom: 0px;
+                                        margin-left: 5px;
+                                        border-style: solid;
+                                        border-color: #000000;
+                                        box-shadow: none;
+                                        width: auto;
+                                        max-width: 100%;
+                                        min-width: 60px;
+                                        display: inline-block;
+                                        text-align: center;
+                                        z-index: 0;
+                                      "
+                                      class="StyledBackgroundWrapper__BackgroundWrapper-sc-4136c0-0 elScCr naylor-days"
+                                    >
+                                      <span
+                                        class="number-string number-days"
+                                        style="
+                                          color: #352322;
+                                          font-family: Verdana, sans-serif;
+                                          font-weight: 600;
+                                          font-size: 26px;
+                                          text-transform: none;
+                                          text-decoration: none;
+                                          line-height: 1.2;
+                                          letter-spacing: 0px;
+                                          font-style: normal;
+                                        "
+                                        ><span
+                                          class="char"
+                                          aria-hidden="true"
+                                          style="display: inline-block; text-align: center; min-width: 0px"
+                                          >0</span
+                                        ><span
+                                          class="char"
+                                          aria-hidden="true"
+                                          style="display: inline-block; text-align: center; min-width: 0px"
+                                          >3</span
+                                        ></span
+                                      >
+                                      <div
+                                        class="unit-days"
+                                        style="
+                                          color: #696983;
+                                          font-family: Verdana, sans-serif;
+                                          font-weight: 500;
+                                          font-size: 11px;
+                                          text-transform: none;
+                                          text-decoration: none;
+                                          line-height: 1;
+                                          letter-spacing: 0;
+                                          font-style: normal;
+                                        "
+                                        dir="auto"
+                                      >
+                                        Day
+                                      </div>
+                                    </div>
+                                    <div
+                                      style="
+                                        border-top-left-radius: 10px;
+                                        border-top-right-radius: 10px;
+                                        border-bottom-right-radius: 10px;
+                                        border-bottom-left-radius: 10px;
+                                        border-top-width: 0px;
+                                        border-right-width: 0px;
+                                        border-bottom-width: 0px;
+                                        border-left-width: 0px;
+                                        padding-top: 12px;
+                                        padding-right: 14px;
+                                        padding-bottom: 12px;
+                                        padding-left: 13px;
+                                        margin-top: 0px;
+                                        margin-right: 5px;
+                                        margin-bottom: 0px;
+                                        margin-left: 5px;
+                                        border-style: solid;
+                                        border-color: #000000;
+                                        box-shadow: none;
+                                        width: auto;
+                                        max-width: 100%;
+                                        min-width: 60px;
+                                        display: inline-block;
+                                        text-align: center;
+                                        z-index: 0;
+                                      "
+                                      class="StyledBackgroundWrapper__BackgroundWrapper-sc-4136c0-0 elScCr naylor-hours"
+                                    >
+                                      <span
+                                        class="number-string number-hours"
+                                        style="
+                                          color: #352322;
+                                          font-family: Verdana, sans-serif;
+                                          font-weight: 600;
+                                          font-size: 26px;
+                                          text-transform: none;
+                                          text-decoration: none;
+                                          line-height: 1.2;
+                                          letter-spacing: 0px;
+                                          font-style: normal;
+                                        "
+                                        ><span
+                                          class="char"
+                                          aria-hidden="true"
+                                          style="display: inline-block; text-align: center; min-width: 0px"
+                                          >1</span
+                                        ><span
+                                          class="char"
+                                          aria-hidden="true"
+                                          style="display: inline-block; text-align: center; min-width: 0px"
+                                          >5</span
+                                        ></span
+                                      >
+                                      <div
+                                        class="unit-hours"
+                                        style="
+                                          color: #696983;
+                                          font-family: Verdana, sans-serif;
+                                          font-weight: 500;
+                                          font-size: 11px;
+                                          text-transform: none;
+                                          text-decoration: none;
+                                          line-height: 1;
+                                          letter-spacing: 0;
+                                          font-style: normal;
+                                        "
+                                        dir="auto"
+                                      >
+                                        Hr
+                                      </div>
+                                    </div>
+                                    <div
+                                      style="
+                                        border-top-left-radius: 10px;
+                                        border-top-right-radius: 10px;
+                                        border-bottom-right-radius: 10px;
+                                        border-bottom-left-radius: 10px;
+                                        border-top-width: 0px;
+                                        border-right-width: 0px;
+                                        border-bottom-width: 0px;
+                                        border-left-width: 0px;
+                                        padding-top: 12px;
+                                        padding-right: 14px;
+                                        padding-bottom: 12px;
+                                        padding-left: 13px;
+                                        margin-top: 0px;
+                                        margin-right: 5px;
+                                        margin-bottom: 0px;
+                                        margin-left: 5px;
+                                        border-style: solid;
+                                        border-color: #000000;
+                                        box-shadow: none;
+                                        width: auto;
+                                        max-width: 100%;
+                                        min-width: 60px;
+                                        display: inline-block;
+                                        text-align: center;
+                                        z-index: 0;
+                                      "
+                                      class="StyledBackgroundWrapper__BackgroundWrapper-sc-4136c0-0 elScCr naylor-minutes"
+                                    >
+                                      <span
+                                        class="number-string number-minutes"
+                                        style="
+                                          color: #352322;
+                                          font-family: Verdana, sans-serif;
+                                          font-weight: 600;
+                                          font-size: 26px;
+                                          text-transform: none;
+                                          text-decoration: none;
+                                          line-height: 1.2;
+                                          letter-spacing: 0px;
+                                          font-style: normal;
+                                        "
+                                        ><span
+                                          class="char"
+                                          aria-hidden="true"
+                                          style="display: inline-block; text-align: center; min-width: 0px"
+                                          >3</span
+                                        ><span
+                                          class="char"
+                                          aria-hidden="true"
+                                          style="display: inline-block; text-align: center; min-width: 0px"
+                                          >1</span
+                                        ></span
+                                      >
+                                      <div
+                                        class="unit-minutes"
+                                        style="
+                                          color: #696983;
+                                          font-family: Verdana, sans-serif;
+                                          font-weight: 500;
+                                          font-size: 11px;
+                                          text-transform: none;
+                                          text-decoration: none;
+                                          line-height: 1;
+                                          letter-spacing: 0;
+                                          font-style: normal;
+                                        "
+                                        dir="auto"
+                                      >
+                                        Min
+                                      </div>
+                                    </div>
+                                    <div
+                                      style="
+                                        border-top-left-radius: 10px;
+                                        border-top-right-radius: 10px;
+                                        border-bottom-right-radius: 10px;
+                                        border-bottom-left-radius: 10px;
+                                        border-top-width: 0px;
+                                        border-right-width: 0px;
+                                        border-bottom-width: 0px;
+                                        border-left-width: 0px;
+                                        padding-top: 12px;
+                                        padding-right: 14px;
+                                        padding-bottom: 12px;
+                                        padding-left: 13px;
+                                        margin-top: 0px;
+                                        margin-right: 5px;
+                                        margin-bottom: 0px;
+                                        margin-left: 5px;
+                                        border-style: solid;
+                                        border-color: #000000;
+                                        box-shadow: none;
+                                        width: auto;
+                                        max-width: 100%;
+                                        min-width: 60px;
+                                        display: inline-block;
+                                        text-align: center;
+                                        z-index: 0;
+                                      "
+                                      class="StyledBackgroundWrapper__BackgroundWrapper-sc-4136c0-0 elScCr naylor-seconds"
+                                    >
+                                      <span
+                                        class="number-string number-seconds"
+                                        style="
+                                          color: #352322;
+                                          font-family: Verdana, sans-serif;
+                                          font-weight: 600;
+                                          font-size: 26px;
+                                          text-transform: none;
+                                          text-decoration: none;
+                                          line-height: 1.2;
+                                          letter-spacing: 0px;
+                                          font-style: normal;
+                                        "
+                                        ><span
+                                          class="char"
+                                          aria-hidden="true"
+                                          style="display: inline-block; text-align: center; min-width: 0px"
+                                          >0</span
+                                        ><span
+                                          class="char"
+                                          aria-hidden="true"
+                                          style="display: inline-block; text-align: center; min-width: 0px"
+                                          >8</span
+                                        ></span
+                                      >
+                                      <div
+                                        class="unit-seconds"
+                                        style="
+                                          color: #696983;
+                                          font-family: Verdana, sans-serif;
+                                          font-weight: 500;
+                                          font-size: 11px;
+                                          text-transform: none;
+                                          text-decoration: none;
+                                          line-height: 1;
+                                          letter-spacing: 0;
+                                          font-style: normal;
+                                        "
+                                        dir="auto"
+                                      >
+                                        Sec
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="Row__StyledRow-sc-3p43ya-0 gWmuIY naylor-row naylor-row-2 Row om-row">
+                  <div class="naylor-row-content Row__content">
+                    <div
+                      style="
+                        display: flex;
+                        width: 100%;
+                        flex-direction: inherit;
+                        align-items: flex-start;
+                        border-style: solid;
+                        border-color: #000000;
+                        border-top-left-radius: 0%;
+                        border-top-right-radius: 0%;
+                        border-bottom-right-radius: 0%;
+                        border-bottom-left-radius: 0%;
+                        border-top-width: 0;
+                        border-right-width: 0;
+                        border-bottom-width: 0;
+                        border-left-width: 0;
+                        padding-top: 0px;
+                        padding-right: 20px;
+                        padding-bottom: 20px;
+                        padding-left: 20px;
+                        margin-top: 0;
+                        margin-right: 0;
+                        margin-bottom: 0;
+                        margin-left: 0;
+                        box-shadow: 0px 0px 0px 0px #ffffff;
+                        max-width: 100%;
+                        z-index: 0;
+                      "
+                      class="StyledBackgroundWrapper__BackgroundWrapper-sc-4136c0-0 hVluvJ naylor-row-inner"
+                    >
+                      <div
+                        class="naylor-column naylor-col-1 Column om-column"
+                        style="display: inline-block; width: 100%"
+                      >
+                        <div class="naylor-col-content Column__content" style="height: 100%">
+                          <div
+                            style="
+                              align-items: flex-start;
+                              border-style: solid;
+                              border-color: #000000;
+                              border-top-left-radius: 0%;
+                              border-top-right-radius: 0%;
+                              border-bottom-right-radius: 0%;
+                              border-bottom-left-radius: 0%;
+                              border-top-width: 0;
+                              border-right-width: 0;
+                              border-bottom-width: 0;
+                              border-left-width: 0;
+                              padding-top: 0;
+                              padding-right: 0;
+                              padding-bottom: 0;
+                              padding-left: 0;
+                              margin-top: 0;
+                              margin-right: 0;
+                              margin-bottom: 0;
+                              margin-left: 0;
+                              box-shadow: 0px 0px 0px 0px #ffffff;
+                              max-width: 100%;
+                              z-index: 0;
+                              height: 100%;
+                            "
+                            class="StyledBackgroundWrapper__BackgroundWrapper-sc-4136c0-0 hVluvJ naylor-col-inner"
+                          >
+                            <div class="naylor-element naylor-ele-1 Element om-element">
+                              <div class="naylor-ele-content Element__content">
+                                <div
+                                  class="naylor-te-wrapper naylor-TextElement--wrapper"
+                                  id="naylor-TextElement--wrapper--YCbNhRPuhH9POBDhAh2o"
+                                  style="
+                                    border-top-left-radius: 0%;
+                                    border-top-right-radius: 0%;
+                                    border-bottom-right-radius: 0%;
+                                    border-bottom-left-radius: 0%;
+                                    border-top-width: 0px;
+                                    border-right-width: 0px;
+                                    border-bottom-width: 0px;
+                                    border-left-width: 0px;
+                                    padding-top: 6px;
+                                    padding-right: 0px;
+                                    padding-bottom: 6px;
+                                    padding-left: 0px;
+                                    margin-top: 6px;
+                                    margin-right: 0px;
+                                    margin-bottom: 6px;
+                                    margin-left: 0px;
+                                    background: transparent;
+                                    border-style: solid;
+                                    border-color: #000000;
+                                    box-shadow: 0px 0px 0px 0px #ffffff;
+                                    width: auto;
+                                    max-width: 100%;
+                                    position: relative;
+                                    z-index: 0;
+                                  "
+                                >
+                                  <div
+                                    class="naylor-te-content naylor-TextElement--content"
+                                    style="
+                                      overflow-wrap: break-word;
+                                      color: #000000;
+                                      font-family: Montserrat;
+                                      font-weight: 400;
+                                      font-size: 16px;
+                                      text-transform: none;
+                                      text-decoration: none;
+                                      line-height: 1;
+                                      letter-spacing: 0;
+                                      font-style: normal;
+                                      text-align: left;
+                                    "
+                                  >
+                                    <p style="text-align: center; line-height: 1.4">
+                                      <span
+                                        style="
+                                          font-family: Verdana, sans-serif;
+                                          font-size: 16px;
+                                          letter-spacing: 0px;
+                                          font-weight: 500;
+                                          color: rgb(0, 0, 0);
+                                        "
+                                        >Purchase bundle at almost the <strong>same price</strong> as a single
+                                        product</span
+                                      >
+                                    </p>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="naylor-element naylor-ele-2 Element om-element">
+                              <div class="naylor-ele-content Element__content">
+                                <div
+                                  class="naylor-yne-wrapper naylor-YesNoElement--wrapper"
+                                  id="naylor-YesButtonElement--wrapper--l3gFHPTC69kd47I2HDri"
+                                  style="
+                                    border-top-left-radius: 0%;
+                                    border-top-right-radius: 0%;
+                                    border-bottom-right-radius: 0%;
+                                    border-bottom-left-radius: 0%;
+                                    border-top-width: 0;
+                                    border-right-width: 0;
+                                    border-bottom-width: 0;
+                                    border-left-width: 0;
+                                    padding-top: 0px;
+                                    padding-right: 0px;
+                                    padding-bottom: 0px;
+                                    padding-left: 0px;
+                                    margin-top: 0px;
+                                    margin-right: 0px;
+                                    margin-bottom: 0px;
+                                    margin-left: 0px;
+                                    background: transparent;
+                                    border-style: solid;
+                                    border-color: #000000;
+                                    box-shadow: 0px 0px 0px 0px #ffffff;
+                                    width: auto;
+                                    max-width: 100%;
+                                    position: relative;
+                                    z-index: 0;
+                                  "
+                                >
+                                  <div class="naylor-yne-content naylor-YesNoElement--content">
+                                    <div
+                                      class="naylor-be-wrapper naylor-ButtonElement--wrapper"
+                                      style="text-align: center"
+                                    >
+                                      <div class="naylor-be-content naylor-ButtonElement--content">
+                                        <button
+                                          id="naylor-YesButtonElement--l3gFHPTC69kd47I2HDri"
+                                          name="naylor-yesbutton--l3gFHPTC69kd47I2HDri"
+                                          class="StyledIconButtonElement-sc-114x20d-0 lfTTpH naylor-YesNo--Yes"
+                                          title="Yes! I Want Big Bundle 🚀"
+                                          value="Yes! I Want Big Bundle 🚀"
+                                          aria-live="polite"
+                                          type="button"
+                                        >
+                                          Yes! I Want Big Bundle 🚀
+                                        </button>
+                                      </div>
+                                    </div>
+                                    <div
+                                      class="naylor-be-wrapper naylor-ButtonElement--wrapper"
+                                      style="text-align: center"
+                                    >
+                                      <div class="naylor-be-content naylor-ButtonElement--content">
+                                        <button
+                                          id="naylor-NoButtonElement--l3gFHPTC69kd47I2HDri"
+                                          name="naylor-nobutton--l3gFHPTC69kd47I2HDri"
+                                          class="StyledIconButtonElement-sc-114x20d-0 gzjEni naylor-YesNo--No"
+                                          title="No thanks I don&#39;t want to save"
+                                          value="No thanks I don&#39;t want to save"
+                                          aria-live="polite"
+                                          type="button"
+                                        >
+                                          No thanks I don't want to save
+                                        </button>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div id="om-n46voiqfo0igqz4admvr-CustomJS" style="display: none"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="naylor-slide-closed Slide--closed"
+          style="
+            border-top-width: 1px;
+            border-right-width: 1px;
+            border-bottom-width: 1px;
+            border-left-width: 1px;
+            border-top-left-radius: 3px;
+            border-top-right-radius: 3px;
+            border-bottom-right-radius: 3px;
+            border-bottom-left-radius: 3px;
+            padding-top: 5px;
+            padding-right: 5px;
+            padding-left: 5px;
+            padding-bottom: 5px;
+            background: #ffffff;
+            border-color: #b1bacb;
+            border-style: solid;
+            cursor: pointer;
+            user-select: none;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 400;
+            font-family: Open Sans;
+            line-height: 1.4;
+            letter-spacing: 0;
+            text-transform: none;
+            text-decoration: none;
+            color: #60656f;
+            display: none;
+            position: relative;
+            z-index: 2;
+          "
+        >
+          <div class="closed-title" style="position: relative; flex: 2">Learn more about us!</div>
+          <div
+            class="closed-icon"
+            style="
+              padding-top: 0px;
+              padding-right: 0px;
+              padding-bottom: 0px;
+              padding-left: 0px;
+              margin-top: 0px;
+              margin-right: 0px;
+              margin-bottom: 0px;
+              margin-left: 0px;
+              display: block;
+            "
+          >
+            <svg
+              height="30"
+              version="1.1"
+              width="30"
+              xmlns="http://www.w3.org/2000/svg"
+              style="display: block; fill: #60656f; height: 22px; width: 22px"
+              role="img"
+              viewBox="0 0 384 512"
+            >
+              <path
+                d="M368 224H224V80c0-8.84-7.16-16-16-16h-32c-8.84 0-16 7.16-16 16v144H16c-8.84 0-16 7.16-16 16v32c0 8.84 7.16 16 16 16h144v144c0 8.84 7.16 16 16 16h32c8.84 0 16-7.16 16-16V288h144c8.84 0 16-7.16 16-16v-32c0-8.84-7.16-16-16-16z"
+                fill="#60656f"
+              ></path>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
