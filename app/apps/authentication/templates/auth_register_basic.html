@@ -8,15 +8,133 @@
 {% block page_css %}
 {{ block.super }}
 <link rel="stylesheet" href="{% static  'vendor/css/pages/page-auth.css' %}">
-<!-- Include the JavaScript file -->
+<style>
+    .password-strength {
+        height: 5px;
+        margin-top: 5px;
+        border-radius: 2px;
+        transition: all 0.3s ease-in-out;
+    }
+    .strength-weak { background-color: #ff4d4f; width: 25%; }
+    .strength-medium { background-color: #faad14; width: 50%; }
+    .strength-good { background-color: #52c41a; width: 75%; }
+    .strength-strong { background-color: #1890ff; width: 100%; }
+    .password-requirements {
+        font-size: 0.8rem;
+        color: #666;
+        margin-top: 5px;
+    }
+    .requirement {
+        margin: 2px 0;
+    }
+    .requirement.met {
+        color: #52c41a;
+    }
+    .requirement.unmet {
+        color: #ff4d4f;
+    }
+
+    /* Custom Alert Box Styles */
+    .custom-alert {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        min-width: 300px;
+        max-width: 400px;
+        padding: 15px;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        z-index: 9999;
+        display: flex;
+        align-items: center;
+        animation: slideIn 0.3s ease-out;
+        transform: translateX(0);
+    }
+
+    .custom-alert.hide {
+        animation: slideOut 0.3s ease-in forwards;
+    }
+
+    .custom-alert.error {
+        background-color: #fff2f0;
+        border: 1px solid #ffccc7;
+    }
+
+    .custom-alert.success {
+        background-color: #f6ffed;
+        border: 1px solid #b7eb8f;
+    }
+
+    .custom-alert-icon {
+        margin-right: 12px;
+        font-size: 20px;
+    }
+
+    .custom-alert.error .custom-alert-icon {
+        color: #ff4d4f;
+    }
+
+    .custom-alert.success .custom-alert-icon {
+        color: #52c41a;
+    }
+
+    .custom-alert-content {
+        flex: 1;
+    }
+
+    .custom-alert-title {
+        font-weight: 600;
+        margin-bottom: 4px;
+    }
+
+    .custom-alert-message {
+        color: #666;
+        font-size: 14px;
+    }
+
+    .custom-alert-close {
+        margin-left: 12px;
+        cursor: pointer;
+        color: #999;
+        font-size: 16px;
+        padding: 4px;
+    }
+
+    .custom-alert-close:hover {
+        color: #666;
+    }
+
+    @keyframes slideIn {
+        from {
+            transform: translateX(100%);
+            opacity: 0;
+        }
+        to {
+            transform: translateX(0);
+            opacity: 1;
+        }
+    }
+
+    @keyframes slideOut {
+        from {
+            transform: translateX(0);
+            opacity: 1;
+        }
+        to {
+            transform: translateX(100%);
+            opacity: 0;
+        }
+    }
+</style>
 {% endblock page_css %}
 
-
 {% block content %}
+<!-- Custom Alert Container -->
+<div id="alertContainer"></div>
+
 <div class="position-relative">
   <div class="authentication-wrapper authentication-basic container-p-y">
     <div class="authentication-inner py-6 mx-4">
-
       <!-- Register Card -->
       <div class="card p-7 mx-auto w-100" style="max-width: 700px;">
         <!-- Logo -->
@@ -31,34 +149,43 @@
           <h4 class="mb-1">Create your account</h4>
           <p class="mb-5">Join NeuroVue and get personalized AI interview prep!</p>
 
-          <form id="formAuthentication" class="mb-5" action="{% url 'index' %}">
+          <form id="formAuthentication" class="mb-5" method="POST" action="{% url 'register_user' %}">
            {% csrf_token %}
            <div class="mb-5 form-password-toggle">
             <div class="input-group input-group-merge">
               <div class="form-floating form-floating-outline">
-                <input type="text" id="username" class="form-control" name="username" placeholder="Username" aria-describedby="username" />
+                <input type="text" id="username" class="form-control" name="username" placeholder="Username" aria-describedby="username" required minlength="3" pattern="[a-zA-Z0-9]+" />
                 <label for="username">Username</label>
               </div>
             </div>
+            <small class="text-muted">Username must be at least 3 characters and contain only letters and numbers</small>
           </div>
             <div class="form-floating form-floating-outline mb-5">
-              <input type="text" class="form-control" id="email" name="email" placeholder="Enter your email">
+              <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email" required>
               <label for="email">Email</label>
             </div>
             <div class="mb-5 form-password-toggle">
               <div class="input-group input-group-merge">
                 <div class="form-floating form-floating-outline">
-                  <input type="password" id="password" class="form-control" name="password" placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;" aria-describedby="password" />
+                  <input type="password" id="password" class="form-control" name="password" placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;" aria-describedby="password" required minlength="8" />
                   <label for="password">Password</label>
                 </div>
                 <span class="input-group-text cursor-pointer"><i class="ri-eye-off-line ri-20px"></i></span>
+              </div>
+              <div class="password-strength"></div>
+              <div class="password-requirements">
+                <div class="requirement" data-requirement="length">At least 8 characters</div>
+                <div class="requirement" data-requirement="uppercase">One uppercase letter</div>
+                <div class="requirement" data-requirement="lowercase">One lowercase letter</div>
+                <div class="requirement" data-requirement="number">One number</div>
+                <div class="requirement" data-requirement="special">One special character</div>
               </div>
             </div>
 
             <div class="mb-5 form-password-toggle">
               <div class="input-group input-group-merge">
                 <div class="form-floating form-floating-outline">
-                  <input type="password" id="confirm-password" class="form-control" name="confirm-password" placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;" aria-describedby="confirm-password" />
+                  <input type="password" id="confirm-password" class="form-control" name="confirm-password" placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;" aria-describedby="confirm-password" required />
                   <label for="confirm-password">Confirm Password</label>
                 </div>
                 <span class="input-group-text cursor-pointer"><i class="ri-eye-off-line ri-20px"></i></span>
@@ -67,7 +194,7 @@
 
             <div class="mb-5 py-2">
               <div class="form-check mb-0">
-                <input class="form-check-input" type="checkbox" id="terms-conditions" name="terms">
+                <input class="form-check-input" type="checkbox" id="terms-conditions" name="terms" required>
                 <label class="form-check-label" for="terms-conditions">
                   I agree to
                   <a href="javascript:void(0);">privacy policy & terms</a>
@@ -94,5 +221,144 @@
     </div>
   </div>
 </div>
+
+{% block page_js %}
+{{ block.super }}
+<script>
+// Custom Alert Function
+function showAlert(message, type = 'error') {
+    const alertContainer = document.getElementById('alertContainer');
+    const alert = document.createElement('div');
+    alert.className = `custom-alert ${type}`;
+    
+    const icon = type === 'error' ? 'ri-error-warning-line' : 'ri-checkbox-circle-line';
+    
+    alert.innerHTML = `
+        <i class="ri ${icon} custom-alert-icon"></i>
+        <div class="custom-alert-content">
+            <div class="custom-alert-title">${type === 'error' ? 'Error' : 'Success'}</div>
+            <div class="custom-alert-message">${message}</div>
+        </div>
+        <i class="ri-close-line custom-alert-close"></i>
+    `;
+    
+    alertContainer.appendChild(alert);
+    
+    // Add click event to close button
+    const closeBtn = alert.querySelector('.custom-alert-close');
+    closeBtn.addEventListener('click', () => {
+        alert.classList.add('hide');
+        setTimeout(() => alert.remove(), 300);
+    });
+    
+    // Auto remove after 5 seconds
+    setTimeout(() => {
+        if (alert.parentNode) {
+            alert.classList.add('hide');
+            setTimeout(() => alert.remove(), 300);
+        }
+    }, 5000);
+}
+
+// Show messages from Django
+document.addEventListener('DOMContentLoaded', function() {
+    {% if messages %}
+        {% for message in messages %}
+            showAlert("{{ message|escapejs }}", "{% if message.tags == 'error' %}error{% else %}success{% endif %}");
+        {% endfor %}
+    {% endif %}
+
+    // Password strength code
+    const password = document.getElementById('password');
+    const strengthBar = document.querySelector('.password-strength');
+    const requirements = document.querySelectorAll('.requirement');
+    
+    password.addEventListener('input', function() {
+        const value = this.value;
+        let strength = 0;
+        
+        // Check length
+        if (value.length >= 8) {
+            strength += 25;
+            requirements[0].classList.add('met');
+            requirements[0].classList.remove('unmet');
+        } else {
+            requirements[0].classList.add('unmet');
+            requirements[0].classList.remove('met');
+        }
+        
+        // Check uppercase
+        if (/[A-Z]/.test(value)) {
+            strength += 25;
+            requirements[1].classList.add('met');
+            requirements[1].classList.remove('unmet');
+        } else {
+            requirements[1].classList.add('unmet');
+            requirements[1].classList.remove('met');
+        }
+        
+        // Check lowercase
+        if (/[a-z]/.test(value)) {
+            strength += 25;
+            requirements[2].classList.add('met');
+            requirements[2].classList.remove('unmet');
+        } else {
+            requirements[2].classList.add('unmet');
+            requirements[2].classList.remove('met');
+        }
+        
+        // Check number
+        if (/\d/.test(value)) {
+            strength += 25;
+            requirements[3].classList.add('met');
+            requirements[3].classList.remove('unmet');
+        } else {
+            requirements[3].classList.add('unmet');
+            requirements[3].classList.remove('met');
+        }
+        
+        // Check special character
+        if (/[!@#$%^&*(),.?":{}|<>]/.test(value)) {
+            strength += 25;
+            requirements[4].classList.add('met');
+            requirements[4].classList.remove('unmet');
+        } else {
+            requirements[4].classList.add('unmet');
+            requirements[4].classList.remove('met');
+        }
+        
+        // Update strength bar
+        strengthBar.className = 'password-strength';
+        if (strength <= 25) {
+            strengthBar.classList.add('strength-weak');
+        } else if (strength <= 50) {
+            strengthBar.classList.add('strength-medium');
+        } else if (strength <= 75) {
+            strengthBar.classList.add('strength-good');
+        } else {
+            strengthBar.classList.add('strength-strong');
+        }
+    });
+    
+    // Toggle password visibility
+    document.querySelectorAll('.input-group-text.cursor-pointer').forEach(function(toggle) {
+        toggle.addEventListener('click', function() {
+            const input = this.previousElementSibling.querySelector('input');
+            const icon = this.querySelector('i');
+            
+            if (input.type === 'password') {
+                input.type = 'text';
+                icon.classList.remove('ri-eye-off-line');
+                icon.classList.add('ri-eye-line');
+            } else {
+                input.type = 'password';
+                icon.classList.remove('ri-eye-line');
+                icon.classList.add('ri-eye-off-line');
+            }
+        });
+    });
+});
+</script>
+{% endblock page_js %}
 
 {% endblock content %}
