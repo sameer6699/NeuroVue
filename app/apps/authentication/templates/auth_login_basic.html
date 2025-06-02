@@ -9,15 +9,109 @@
 {{ block.super }}
 <link rel="stylesheet" href="{% static  'vendor/css/pages/page-auth.css' %}">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+    /* Custom Alert Box Styles */
+    .custom-alert {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        min-width: 300px;
+        max-width: 400px;
+        padding: 15px;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        z-index: 9999;
+        display: flex;
+        align-items: center;
+        animation: slideIn 0.3s ease-out;
+        transform: translateX(0);
+    }
 
+    .custom-alert.hide {
+        animation: slideOut 0.3s ease-in forwards;
+    }
+
+    .custom-alert.error {
+        background-color: #fff2f0;
+        border: 1px solid #ffccc7;
+    }
+
+    .custom-alert.success {
+        background-color: #f6ffed;
+        border: 1px solid #b7eb8f;
+    }
+
+    .custom-alert-icon {
+        margin-right: 12px;
+        font-size: 20px;
+    }
+
+    .custom-alert.error .custom-alert-icon {
+        color: #ff4d4f;
+    }
+
+    .custom-alert.success .custom-alert-icon {
+        color: #52c41a;
+    }
+
+    .custom-alert-content {
+        flex: 1;
+    }
+
+    .custom-alert-title {
+        font-weight: 600;
+        margin-bottom: 4px;
+    }
+
+    .custom-alert-message {
+        color: #666;
+        font-size: 14px;
+    }
+
+    .custom-alert-close {
+        margin-left: 12px;
+        cursor: pointer;
+        color: #999;
+        font-size: 16px;
+        padding: 4px;
+    }
+
+    .custom-alert-close:hover {
+        color: #666;
+    }
+
+    @keyframes slideIn {
+        from {
+            transform: translateX(100%);
+            opacity: 0;
+        }
+        to {
+            transform: translateX(0);
+            opacity: 1;
+        }
+    }
+
+    @keyframes slideOut {
+        from {
+            transform: translateX(0);
+            opacity: 1;
+        }
+        to {
+            transform: translateX(100%);
+            opacity: 0;
+        }
+    }
+</style>
 {% endblock page_css %}
 
 {% block content %}
-<div class="position-relative">
+<!-- Custom Alert Container -->
+<div id="alertContainer"></div>
 
+<div class="position-relative">
   <div class="authentication-wrapper authentication-basic container-p-y">
     <div class="authentication-inner py-6 mx-4">
-      <!-- Login -->
+      <!-- Login Card -->
       <div class="card p-7 mx-auto w-100" style="max-width: 700px;">
         <!-- Logo -->
         <div class="app-brand d-flex flex-column align-items-center mt-5">
@@ -27,42 +121,37 @@
           </a>
         </div>
         <!-- /Logo -->
-
         <div class="card-body mt-1">
-          <h4 class="mb-1">Welcome to NeuroVue! 👋🏻</h4>
-          <p class="mb-5">Sign in to access personalized interview practice powered by AI.</p>
+          <h4 class="mb-1">Welcome to NeuroVue! 👋</h4>
+          <p class="mb-5">Please sign-in to your account and start the adventure</p>
 
-          <form id="formAuthentication" class="mb-5" action="{% url 'index' %}">
+          <form id="formAuthentication" class="mb-5" method="POST" action="{% url 'login_user' %}">
             {% csrf_token %}
             <div class="form-floating form-floating-outline mb-5">
-              <input type="text" class="form-control" id="email" name="email-username" placeholder="Enter your email or username" autofocus>
-              <label for="email">Email or Username</label>
+              <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email" required>
+              <label for="email">Email</label>
             </div>
-            <div class="mb-5">
-              <div class="form-password-toggle">
-                <div class="input-group input-group-merge">
-                  <div class="form-floating form-floating-outline">
-                    <input type="password" id="password" class="form-control" name="password" placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;" aria-describedby="password" />
-                    <label for="password">Password</label>
-                  </div>
-                  <span class="input-group-text cursor-pointer"><i class="ri-eye-off-line ri-20px"></i></span>
+            <div class="mb-5 form-password-toggle">
+              <div class="input-group input-group-merge">
+                <div class="form-floating form-floating-outline">
+                  <input type="password" id="password" class="form-control" name="password" placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;" required />
+                  <label for="password">Password</label>
                 </div>
+                <span class="input-group-text cursor-pointer"><i class="ri-eye-off-line ri-20px"></i></span>
               </div>
             </div>
-            <div class="mb-5 pb-2 d-flex justify-content-between pt-2 align-items-center">
-              <div class="form-check mb-0">
-                <input class="form-check-input" type="checkbox" id="remember-me">
-                <label class="form-check-label" for="remember-me">
-                  Remember Me
-                </label>
+            <div class="mb-5 d-flex justify-content-between">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="remember-me" name="remember">
+                <label class="form-check-label" for="remember-me"> Remember Me </label>
               </div>
-              <a href="{% url 'auth-forgot-password-basic' %}" class="float-end mb-1">
-                <span>Forgot Password?</span>
+              <a href="{% url 'auth-forgot-password-basic' %}" class="text-decoration-none">
+                <small>Forgot Password?</small>
               </a>
             </div>
-            <div class="mb-5">
-              <button class="btn btn-primary d-grid w-100" type="submit">login</button>
-            </div>
+            <button class="btn btn-primary d-grid w-100 mb-5">
+              Sign in
+            </button>
           </form>
 
           <span class="divider text-center mb-4">
@@ -98,15 +187,81 @@
               <span>Create an account</span>
             </a>
           </p>
-
         </div>
       </div>
-      <!-- /Login -->
-
+      <!-- Login Card -->
       <img src="{% static 'img/illustrations/tree-3.png' %}" alt="auth-tree" class="authentication-image-object-left d-none d-lg-block">
       <img src="{% static 'img/illustrations/auth-basic-mask-light.png' %}" height="172" class="authentication-image d-none d-lg-block" alt="triangle-bg">
       <img src="{% static 'img/illustrations/tree.png' %}" alt="auth-tree" class="authentication-image-object-right d-none d-lg-block">
     </div>
   </div>
 </div>
+
+{% block page_js %}
+{{ block.super }}
+<script>
+// Custom Alert Function
+function showAlert(message, type = 'error') {
+    const alertContainer = document.getElementById('alertContainer');
+    const alert = document.createElement('div');
+    alert.className = `custom-alert ${type}`;
+    
+    const icon = type === 'error' ? 'ri-error-warning-line' : 'ri-checkbox-circle-line';
+    
+    alert.innerHTML = `
+        <i class="ri ${icon} custom-alert-icon"></i>
+        <div class="custom-alert-content">
+            <div class="custom-alert-title">${type === 'error' ? 'Error' : 'Success'}</div>
+            <div class="custom-alert-message">${message}</div>
+        </div>
+        <i class="ri-close-line custom-alert-close"></i>
+    `;
+    
+    alertContainer.appendChild(alert);
+    
+    // Add click event to close button
+    const closeBtn = alert.querySelector('.custom-alert-close');
+    closeBtn.addEventListener('click', () => {
+        alert.classList.add('hide');
+        setTimeout(() => alert.remove(), 300);
+    });
+    
+    // Auto remove after 5 seconds
+    setTimeout(() => {
+        if (alert.parentNode) {
+            alert.classList.add('hide');
+            setTimeout(() => alert.remove(), 300);
+        }
+    }, 5000);
+}
+
+// Show messages from Django
+document.addEventListener('DOMContentLoaded', function() {
+    {% if messages %}
+        {% for message in messages %}
+            showAlert("{{ message|escapejs }}", "{% if message.tags == 'error' %}error{% else %}success{% endif %}");
+        {% endfor %}
+    {% endif %}
+
+    // Toggle password visibility
+    document.querySelectorAll('.input-group-text.cursor-pointer').forEach(function(toggle) {
+        toggle.addEventListener('click', function() {
+            const input = this.previousElementSibling.querySelector('input');
+            const icon = this.querySelector('i');
+            
+            if (input.type === 'password') {
+                input.type = 'text';
+                icon.classList.remove('ri-eye-off-line');
+                icon.classList.add('ri-eye-line');
+            } else {
+                input.type = 'password';
+                icon.classList.remove('ri-eye-line');
+                icon.classList.add('ri-eye-off-line');
+            }
+        });
+    });
+});
+</script>
+{% endblock page_js %}
+
 {% endblock content %}
