@@ -30,9 +30,15 @@ class MongoDBConnection:
                 # Test the connection
                 self._client.admin.command('ping')
                 logger.info("MongoDB connection established successfully!")
+                print("\n" + "="*50)
+                print("MongoDB Connection Establish Successfully!")
+                print("="*50 + "\n")
                 
             except Exception as e:
                 logger.error(f"Failed to connect to MongoDB: {str(e)}")
+                print("\n" + "="*50)
+                print(f"MongoDB Connection Failed: {str(e)}")
+                print("="*50 + "\n")
                 raise
 
     @property
