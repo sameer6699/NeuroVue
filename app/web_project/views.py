@@ -1,6 +1,8 @@
 from django.views.generic import TemplateView
 from web_project import TemplateLayout
 from web_project.template_helpers.theme import TemplateHelper
+from django.http import JsonResponse
+from config.mongodb import MongoDBConnection
 
 
 class SystemView(TemplateView):
@@ -21,3 +23,26 @@ class SystemView(TemplateView):
         )
 
         return context
+
+def test_mongodb_connection(request):
+    """
+    Test view to verify MongoDB connection
+    """
+    try:
+        # Get MongoDB connection instance
+        mongo_connection = MongoDBConnection()
+        
+        # Test database access
+        db = mongo_connection.database
+        collections = db.list_collection_names()
+        
+        return JsonResponse({
+            'status': 'success',
+            'message': 'MongoDB connection is working!',
+            'collections': list(collections)
+        })
+    except Exception as e:
+        return JsonResponse({
+            'status': 'error',
+            'message': f'Failed to connect to MongoDB: {str(e)}'
+        }, status=500)
