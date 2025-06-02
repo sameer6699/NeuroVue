@@ -1,4 +1,3 @@
-
 from django.contrib import admin
 from django.urls import include, path
 from web_project.views import SystemView
@@ -7,37 +6,19 @@ from django.http import HttpResponseServerError
 urlpatterns = [
     path("admin/", admin.site.urls),
 
-    # Dashboard urls
+    # Dashboard urls - Keep this first to ensure it takes precedence at root path
     path("", include("apps.dashboards.urls")),
 
-    # layouts urls
+    # All other app urls
     path("", include("apps.layouts.urls")),
-
-    # Pages urls
     path("", include("apps.pages.urls")),
-
-    # Auth urls
     path("", include("apps.authentication.urls")),
-
-    # Card urls
     path("", include("apps.cards.urls")),
-
-    # UI urls
     path("", include("apps.ui.urls")),
-
-    # Extended UI urls
     path("", include("apps.extended_ui.urls")),
-
-    # Icons urls
     path("", include("apps.icons.urls")),
-
-    # Forms urls
     path("", include("apps.forms.urls")),
-
-    # FormLayouts urls
     path("", include("apps.form_layouts.urls")),
-
-    # Tables urls
     path("", include("apps.tables.urls")),
 ]
 

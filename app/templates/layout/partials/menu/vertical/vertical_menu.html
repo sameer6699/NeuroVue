@@ -438,15 +438,13 @@
     </li>
 
     <li class="menu-item">
-      <a href="https://themeselection.com/support/" class="menu-link" target="_blank">
-        <i class="menu-icon tf-icons ri-lifebuoy-line"></i>
-        <div class="text-truncate" data-i18n="Support">Support</div>
-      </a>
-    </li>
-    <li class="menu-item">
-      <a href="https://demos.themeselection.com/materio-bootstrap-html-admin-template/documentation/django-introduction.html" class="menu-link" target="_blank">
-        <i class="menu-icon tf-icons ri-article-line"></i>
-        <div class="text-truncate" data-i18n="Documentation">Documentation</div>
+      <a href="{% url 'pages-account-settings-account' %}" class="menu-link">
+        <div class="d-flex align-items-center">
+          <div class="avatar avatar-circle me-2">
+            <img src="/static/img/avatars/1.png" alt="Profile" class="rounded-circle">
+          </div>
+          <div class="text-truncate" data-i18n="Profile">Profile</div>
+        </div>
       </a>
     </li>
 
