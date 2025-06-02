@@ -21,6 +21,16 @@ urlpatterns = [
         name="pages-account-settings-connections",
     ),
     path(
+        "pages/settings/",
+        PagesView.as_view(template_name="pages/settings/settings.html"),
+        name="settings",
+    ),
+    path(
+        "pages/profile/",
+        PagesView.as_view(template_name="pages/profile/profile.html"),
+        name="profile",
+    ),
+    path(
         "pages/misc/error/",
         MiscPagesView.as_view(template_name="pages_misc_error.html"),
         name="pages-misc-error",
